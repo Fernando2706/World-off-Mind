@@ -90,7 +90,7 @@ private void handleInput(float dt) {
 
 	public void render () {
 		float dt = Gdx.graphics.getDeltaTime();
-		Gdx.gl.glClearColor(1, 1, 1, 1);
+		Gdx.gl.glClearColor(1, 0, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		handleInput(dt);
 		update(dt);

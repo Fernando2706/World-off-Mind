@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.worldoffmind.game.WorldOffMind;
 
 public class JugadorPrincipal extends Caracteres {
-	public static final float SPEED = 400f;
+	public static final float SPEED = 200f;
 
 	public enum State{
 		RIGHT, LEFT, UP, DOWN, IDLELeft, IDLERight, IDLEUp, IDLEDown
@@ -20,7 +20,7 @@ public class JugadorPrincipal extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Parado.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("ParadoDerecha.png")));
 	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("ParadoIzquierda.png")));
 	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ParadoArriba.png")));
 	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("ParadoAbajo.png")));
@@ -37,14 +37,14 @@ public class JugadorPrincipal extends Caracteres {
 
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda7.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquierda8.png")))
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera6.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera7.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera8.png")))
 
 	};
 	TextureRegion [] animacionAbajo= {
@@ -59,30 +59,30 @@ public class JugadorPrincipal extends Caracteres {
 
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("ParadoArriba1.png"))),
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba1.png"))),
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba2.png"))),
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba3.png"))),
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba4.png"))),
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba5.png"))),
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba7.png")))
+			new Sprite(new Texture(Gdx.files.internal("AndarArriba7.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AndarArriba8.png")))
 
 	};
 
 	public JugadorPrincipal(WorldOffMind game,float x,float y) {
 		super(game);
 		position=new Vector2(x,y);
-		animationDerecha=new Animation(0.25f,animacionDerecha);
-		animationAbajo=new Animation(0.25f,animacionAbajo);
-		animationArriba=new Animation(0.25f,animacionArriba);
-		animationIzquierda=new Animation(0.25f,animacionIzquierda);
-		animationParadoAb=new Animation(0.25f,animacionParadoAb);
-		animationParadoAr=new Animation(0.25f,animacionParadoAr);
-		animationParadoD=new Animation(0.25f,animacionParadoD);
-		animationParadoI=new Animation(0.25f,animacionParadoI);
+		animationDerecha=new Animation(0.15f,animacionDerecha);
+		animationAbajo=new Animation(0.15f,animacionAbajo);
+		animationArriba=new Animation(0.15f,animacionArriba);
+		animationIzquierda=new Animation(0.15f,animacionIzquierda);
+		animationParadoAb=new Animation(0.15f,animacionParadoAb);
+		animationParadoAr=new Animation(0.15f,animacionParadoAr);
+		animationParadoD=new Animation(0.15f,animacionParadoD);
+		animationParadoI=new Animation(0.15f,animacionParadoI);
 
-		this.state=state.RIGHT;
+		this.state=state.IDLERight;
 
 
 
@@ -148,10 +148,10 @@ public class JugadorPrincipal extends Caracteres {
 
 	public void update (float dt) {
 
-		// Calcula el tiempo para cargar el frame que proceda de la animaciÃ³n
+		// Calcula el tiempo para cargar el frame que proceda de la animación
 		stateTime += dt;
 
-		// Carga el frame segÃºn su posiciÃ³n y el momento del juego
+		// Carga el frame según su posición y el momento del juego
 
 		switch (this.state) {
 		case RIGHT:
