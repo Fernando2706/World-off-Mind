@@ -1,6 +1,5 @@
 package com.worldoffmind.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -23,39 +22,68 @@ public class WorldOffMind extends Game {
 	public void create () {
 		this.batch=new SpriteBatch();
 		this.font=new BitmapFont();
-
-		//Manu tkm
 		jugador=new JugadorPrincipal(this, 10, 10);
 	}
 	String estado="";
-private void handleInput(float dt) {
-		
+	boolean atacando=false;
+	private void handleInput(float dt) {
+
 		if (Gdx.input.isKeyPressed(Keys.LEFT)) {
 			jugador.state=	jugador.state.LEFT;
 			jugador.move(new Vector2(-dt, 0));
 			estado="izq";
+			atacando=false;
+
 
 		}
+		
 		else if (Gdx.input.isKeyPressed(Keys.RIGHT)) {
 			jugador.state=	jugador.state.RIGHT;
 			jugador.move(new Vector2(dt, 0));
 			estado="derecha";
+			atacando=false;
+
 
 		}
+		
 		else if (Gdx.input.isKeyPressed(Keys.UP)) {
 			jugador.state=	jugador.state.UP;
 			jugador.move(new Vector2(0, dt));
 			estado="arriba";
+			atacando=false;
+
 
 
 		}
+		
 		else if (Gdx.input.isKeyPressed(Keys.DOWN)) {
 			jugador.state=	jugador.state.DOWN;
 			jugador.move(new Vector2(0, -dt));
 			estado="abajo";
+			atacando=false;
 
 
-		}else {
+
+		}
+		
+		else if(Gdx.input.isKeyPressed(Keys.Q)){
+			if(estado.contentEquals("izq")) {
+				jugador.state=jugador.state.attackLeft;
+			}else if(estado.contentEquals("derecha")) {
+				jugador.state=jugador.state.attackRight;
+			}
+			else if(estado.contentEquals("arriba")) {
+				jugador.state=jugador.state.attackUp;
+			}else if(estado.contentEquals("abajo")) {
+				jugador.state=jugador.state.attackDown;
+			}
+		}
+		else if(atacando==true) {
+			
+			atacando =false;
+		}
+		else {
+			atacando=false;
 			if(estado.contentEquals("izq")) {
 				jugador.state=jugador.state.IDLELeft;
 			}else if(estado.contentEquals("derecha")) {
@@ -68,6 +96,8 @@ private void handleInput(float dt) {
 			}
 		}
 		
+		
+
 
 	}
 
@@ -90,17 +120,17 @@ private void handleInput(float dt) {
 
 	public void render () {
 		float dt = Gdx.graphics.getDeltaTime();
-		Gdx.gl.glClearColor(1, 0, 1, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		handleInput(dt);
 		update(dt);
 		batch.begin();
 		jugador.render();
 		batch.end();
-		
-		
+
+
 	}
-	
+
 	public void update(float dt) {
 		jugador.update(dt);
 	}

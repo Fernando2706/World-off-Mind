@@ -22,6 +22,10 @@ public abstract class Caracteres implements Screen{
 	Animation animationParadoI;
 	Animation animationParadoAr;
 	Animation animationParadoAb;
+	Animation animationAArriba;
+	Animation animationAAbajo;
+	Animation animationADerecha;
+	Animation animationAIzquierda;
 
 	public TextureRegion currentFrame;
 	final protected WorldOffMind game;

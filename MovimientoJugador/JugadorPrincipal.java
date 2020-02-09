@@ -12,7 +12,7 @@ public class JugadorPrincipal extends Caracteres {
 	public static final float SPEED = 200f;
 
 	public enum State{
-		RIGHT, LEFT, UP, DOWN, IDLELeft, IDLERight, IDLEUp, IDLEDown
+		RIGHT, LEFT, UP, DOWN, IDLELeft, IDLERight, IDLEUp, IDLEDown, attackRight, attackLeft, attackUp, attackDown
 	}
 	public State state;
 	public void move(Vector2 movement) {
@@ -69,6 +69,42 @@ public class JugadorPrincipal extends Caracteres {
 			new Sprite(new Texture(Gdx.files.internal("AndarArriba8.png")))
 
 	};
+	TextureRegion [] animacionAArriba= {
+			new Sprite(new Texture(Gdx.files.internal("AtacarArriba.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarArriba1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarArriba2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarArrib3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarArriba4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarArriba5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarArriba6.png")))
+	};
+	TextureRegion [] animacionAAbajo= {
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo6.png")))
+	};
+	TextureRegion [] animacionADerecha= {
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha6.png")))
+	};
+	TextureRegion [] animacionAIzquierda= {
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda6.png")))
+	};
 
 	public JugadorPrincipal(WorldOffMind game,float x,float y) {
 		super(game);
@@ -81,7 +117,12 @@ public class JugadorPrincipal extends Caracteres {
 		animationParadoAr=new Animation(0.15f,animacionParadoAr);
 		animationParadoD=new Animation(0.15f,animacionParadoD);
 		animationParadoI=new Animation(0.15f,animacionParadoI);
+		animationAAbajo=new Animation(0.1f,animacionAAbajo);
+		animationAArriba=new Animation(0.1f,animacionAArriba);
+		animationADerecha=new Animation(0.1f,animacionADerecha);
+		animationAIzquierda=new Animation(0.1f,animacionAIzquierda);
 
+		
 		this.state=state.IDLERight;
 
 
@@ -177,6 +218,18 @@ public class JugadorPrincipal extends Caracteres {
 			break;
 		case IDLERight:
 			currentFrame = (TextureRegion) animationParadoD.getKeyFrame(stateTime, true);
+			break;
+		case attackDown:
+			currentFrame = (TextureRegion) animationAAbajo.getKeyFrame(stateTime, true);
+			break;
+		case attackLeft:
+			currentFrame = (TextureRegion) animationAIzquierda.getKeyFrame(stateTime, true);
+			break;
+		case attackRight:
+			currentFrame = (TextureRegion) animationADerecha.getKeyFrame(stateTime, true);
+			break;
+		case attackUp:
+			currentFrame = (TextureRegion) animationAArriba.getKeyFrame(stateTime, true);
 			break;
 		default:
 			currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
