@@ -146,7 +146,7 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public void show() {
-		//this.DeathIsAnotherPath.play();
+		this.DeathIsAnotherPath.play();
 	}
 
 	@Override
