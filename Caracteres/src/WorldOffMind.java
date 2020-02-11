@@ -13,11 +13,13 @@ import com.badlogic.gdx.math.MathUtils;
 
 import personajes.Araña;
 import personajes.JugadorPrincipal;
+import personajes.Minotauro;
 
 public class WorldOffMind extends Game {
 	public SpriteBatch batch;
 	public BitmapFont font;
 	JugadorPrincipal jugador;
+	Minotauro minotauro;
 	Vector<Araña> enemigos=new Vector<Araña>();
 	public void crearEnemigos() {
 		for(int i=0;i<20;i++) {
@@ -25,6 +27,7 @@ public class WorldOffMind extends Game {
 			float y =MathUtils.random(0,Gdx.graphics.getBackBufferHeight()-20);
 			Araña a=new Araña(this,x,y);
 			enemigos.add(a);
+			
 		}
 	}
 	@Override
@@ -32,6 +35,7 @@ public class WorldOffMind extends Game {
 		this.batch=new SpriteBatch();
 		this.font=new BitmapFont();
 		jugador=new JugadorPrincipal(this, 10, 10);
+		minotauro=new Minotauro(this, 500, 500);
 		crearEnemigos();
 
 	}
@@ -41,6 +45,8 @@ public class WorldOffMind extends Game {
 	boolean tocando=false;
 
 	private void handleInput(float dt) {
+		
+		
 		for(Araña a:enemigos) {
 			if(jugador.rect.overlaps(a.rect)) {
 				tocando=true;
@@ -172,6 +178,7 @@ public class WorldOffMind extends Game {
 		update(dt);
 		batch.begin();
 		jugador.render();
+		minotauro.render();
 		for(Araña a:enemigos) {
 			a.render();
 		}
@@ -182,6 +189,7 @@ public class WorldOffMind extends Game {
 
 	public void update(float dt) {
 		jugador.update(dt);
+		minotauro.update(dt);
 		for(Araña a:enemigos) {
 			a.update(dt);
 		}
