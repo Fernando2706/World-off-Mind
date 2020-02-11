@@ -1,0 +1,1 @@
+Sprites de los personajes
