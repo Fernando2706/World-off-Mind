@@ -1,7 +1,6 @@
 package com.mygdx.game;
 
 import java.util.Vector;
-
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
@@ -10,14 +9,11 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-
 import ataqueJugador.Ataque;
 import ataqueJugador.AtaqueFuego;
 import personajes.Araña;
 import personajes.JugadorPrincipal;
 import personajes.Minotauro;
-
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 
 
@@ -113,7 +109,7 @@ public class WorldOffMind extends Game {
 
 		}
 
-		else if(Gdx.input.isKeyJustPressed(Keys.Q)){
+		else if(Gdx.input.isKeyPressed(Keys.Q)){
 			//font.draw(batch, "Manu Guapeton", this.jugador.position.x+20, this.jugador.position.y+20);this.batch.end();	
 			//this.fuego.render();
 			if(estado.contentEquals("izq")) {
