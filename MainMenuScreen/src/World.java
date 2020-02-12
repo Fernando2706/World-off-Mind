@@ -1,24 +1,22 @@
 package com.worldoffmind.game;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Cursor;
+import com.badlogic.gdx.graphics.Pixmap;
 
 public class World extends Game{
 	
-	public SpriteBatch batch;
-	public BitmapFont font;
-	private MainMenuScreen mainMenuScreen;
+	private Cursor cursor;
 	
 	@Override
 	public void create () {
-		this.batch = new SpriteBatch();
-		this.font = new BitmapFont();
-		this.font.setColor(Color.GOLDENROD);
-		this.font.getData().setScale(1.5f, 1.5f);
-		this.mainMenuScreen = new MainMenuScreen(this);
-		this.setScreen(mainMenuScreen);
+		// Cursor
+		this.cursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("MainMenuTextures/Cursor/dwarven_gauntlet.png")), 0, 0);
+		Gdx.graphics.setCursor(this.cursor);
+		
+		ScreenManager.getInstance().initialize(this);
+		ScreenManager.getInstance().showScreen(ScreenEnum.MainMenuScreen);
 	}
 
 	@Override
@@ -28,7 +26,6 @@ public class World extends Game{
 	
 	@Override
 	public void dispose () {
-		this.batch.dispose();
-		this.font.dispose();
+		Gdx.app.exit();
 	}
 }

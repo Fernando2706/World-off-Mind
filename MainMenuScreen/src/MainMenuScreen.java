@@ -1,12 +1,9 @@
 package com.worldoffmind.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.graphics.Cursor;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -15,47 +12,54 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
-public class MainMenuScreen implements Screen{
+public class MainMenuScreen extends AbstractScreen{
 
-	private final World game;
-	private OrthographicCamera camera;
 	private Texture buttonLight, buttonDark, mainPicture;
-	private Stage Buttonstage;
 	private Button newGameButton, continueGameButton, optionsButton, updatesButton, exitButton;
-	Sprite one = new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch1.png")));
-	private TextureRegion [] animatedTorchImages = {
-			one,
-			new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AnimatedTorch/darkTorch7.png")))
-	};
+	private TextureRegion [] animatedTorchImages;
 	private TextureRegion torch;
-	private Animation animatedTorch;
+	private Animation<TextureRegion> animatedTorch;
 	private Music DeathIsAnotherPath;
-	private Cursor cursor;
 	private float stateTime;
+	private Stage ButtonStage;
+	private boolean playedNewGameButton, playedContinueGameButton, playedOptionsButton, playedUpdatesButton, playedExitButton;
 
-	public MainMenuScreen(final World game) {
-		this.game = game;
+	public MainMenuScreen() {
+		super.font.setColor(Color.GOLDENROD);
+		super.font.getData().setScale(1.5f, 1.5f);
 
-		this.camera = new OrthographicCamera();
+		this.mainPicture = new Texture(Gdx.files.internal("MainMenuTextures/mainPicture.jpg"));
+		this.buttonLight = new Texture(Gdx.files.internal("MainMenuTextures/buttonLight.png"));
+		this.buttonDark = new Texture(Gdx.files.internal("MainMenuTextures/buttonDark.png"));
+		
+		this.animatedTorchImages = new TextureRegion [] {
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch1.png"))),
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch2.png"))),
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch3.png"))),
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch4.png"))),
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch5.png"))),
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch6.png"))),
+				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch7.png")))
+		};
+		this.animatedTorch = new Animation<TextureRegion>(0.15f, this.animatedTorchImages);
+		
+		this.playedNewGameButton = false;
+		this.playedContinueGameButton = false;
+		this.playedOptionsButton = false;
+		this.playedUpdatesButton = false;
+		this.playedExitButton = false;
 
-		// Cursor
-		this.cursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("Cursor/dwarven_gauntlet.png")), 0, 0);
-		Gdx.graphics.setCursor(this.cursor);
+		// Music for the main menu
+		this.DeathIsAnotherPath = Gdx.audio.newMusic(Gdx.files.internal("MainMenuTextures/Music/DeathIsJustAnotherPath.mp3"));
+		this.DeathIsAnotherPath.setVolume(0.2f);
+		this.DeathIsAnotherPath.setLooping(true);
 
-		this.mainPicture = new Texture(Gdx.files.internal("mainPicture.jpg"));
-		this.buttonLight = new Texture(Gdx.files.internal("buttonLight.png"));
-		this.buttonDark = new Texture(Gdx.files.internal("buttonDark.png"));
-		this.animatedTorch = new Animation(0.15f, this.animatedTorchImages);
+		this.ButtonStage = new Stage();
+		Gdx.input.setInputProcessor(this.ButtonStage);
+	}
 
-		// Stages
-		this.Buttonstage = new Stage();
-		Gdx.input.setInputProcessor(this.Buttonstage);
-
+	@Override
+	public void buildStage() {
 		// Main menu buttons
 		this.newGameButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
 		this.continueGameButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
@@ -63,78 +67,105 @@ public class MainMenuScreen implements Screen{
 		this.updatesButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
 		this.exitButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
 
-		this.Buttonstage.addActor(this.newGameButton);
-		this.Buttonstage.addActor(this.continueGameButton);
-		this.Buttonstage.addActor(this.optionsButton);
-		this.Buttonstage.addActor(this.updatesButton);
-		this.Buttonstage.addActor(this.exitButton);
+		this.newGameButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/1.695f, 420, 200);
+		this.newGameButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
+		this.continueGameButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/2.175f, 420, 200);
+		this.continueGameButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
+		this.optionsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/3.04f, 420, 200);
+		this.optionsButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
+		this.updatesButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/5.023f, 420, 200);
+		this.updatesButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
+		this.exitButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/14.4f, 420, 200);
+		this.exitButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
 
-		// Music for the main menu
-		this.DeathIsAnotherPath = Gdx.audio.newMusic(Gdx.files.internal("Music/DeathIsJustAnotherPath.mp3"));
-		this.DeathIsAnotherPath.setVolume(0.3f);
-		this.DeathIsAnotherPath.setLooping(true);
+		this.ButtonStage.addActor(this.newGameButton);
+		this.ButtonStage.addActor(this.continueGameButton);
+		this.ButtonStage.addActor(this.optionsButton);
+		this.ButtonStage.addActor(this.updatesButton);
+		this.ButtonStage.addActor(this.exitButton);
 	}
 
 	public void render(float delta) {
-		float dt = Gdx.graphics.getDeltaTime();
-
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-		update(dt);
+		update(delta);
 
-		this.camera.update();
-		this.game.batch.setProjectionMatrix(this.camera.combined);
+		super.camera.update();
+		super.batch.setProjectionMatrix(super.camera.combined);
+		super.camera.setToOrtho(false, 1920, 1080);
 
+		super.batch.begin();
 		if(Gdx.graphics.isFullscreen()) {
-			this.camera.setToOrtho(false, 1920, 1080);
-			this.newGameButton.setBounds(735, 637, 420, 200);
-			this.continueGameButton.setBounds(735, 497, 420, 200);
-			this.optionsButton.setBounds(735, 355, 420, 200);
-			this.updatesButton.setBounds(735, 215, 420, 200);
-			this.exitButton.setBounds(735, 75, 420, 200);
+			super.batch.draw(this.mainPicture, 0, 0);
 		}
+		super.batch.end();
 
-		this.game.batch.begin();
-		if(Gdx.graphics.isFullscreen()) {
-			this.game.batch.draw(this.mainPicture, 0, 0);
-		}
-		this.game.batch.end();
-
-		this.Buttonstage.draw();
-		this.Buttonstage.act();
-
-		this.game.batch.begin();
-		if(this.newGameButton.isOver()) {
-			this.game.batch.draw(this.torch, 645, 685);
-			this.game.batch.draw(this.torch, 1160, 685);
-			this.game.batch.draw(this.buttonLight, 735, 637, 420, 200);
-		}else if(this.continueGameButton.isOver()) {
-			this.game.batch.draw(this.torch, 645, 540);
-			this.game.batch.draw(this.torch, 1160, 540);
-			this.game.batch.draw(this.buttonLight, 735, 497, 420, 200);
-		}else if(this.optionsButton.isOver()) {
-			this.game.batch.draw(this.torch, 645, 400);
-			this.game.batch.draw(this.torch, 1160, 400);
-			this.game.batch.draw(this.buttonLight, 735, 355, 420, 200);
-		}else if(this.updatesButton.isOver()) {
-			this.game.batch.draw(this.torch, 645, 260);
-			this.game.batch.draw(this.torch, 1160, 260);
-			this.game.batch.draw(this.buttonLight, 735, 215, 420, 200);
-		}else if(this.exitButton.isOver()) {
-			this.game.batch.draw(this.torch, 645, 120);
-			this.game.batch.draw(this.torch, 1160, 120);
-			this.game.batch.draw(this.buttonLight, 735, 75, 420, 200);
-		}
-		this.game.font.draw(this.game.batch, "NEW GAME", 890, 750);
-		this.game.font.draw(this.game.batch, "CONTINUE GAME", 860, 610);
-		this.game.font.draw(this.game.batch, "OPTIONS", 905, 465);
-		this.game.font.draw(this.game.batch, "UPDATES", 905, 325);
-		this.game.font.draw(this.game.batch, "EXIT", 930, 185);
-		this.game.font.draw(this.game.batch, "Version-Alpha", 1830, 15);
-		this.game.batch.end();
+		this.ButtonStage.act(delta);
+		this.ButtonStage.draw();
 		
-		if(this.exitButton.isPressed()) dispose();
+		super.batch.begin();
+		if(this.newGameButton.isOver()) {
+			this.playedContinueGameButton = false;
+			if(this.playedNewGameButton == false) {
+				this.playedNewGameButton = true;
+				super.clickSound.play();
+			}
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/1.5766f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/1.5766f);
+		}else if(this.continueGameButton.isOver()) {
+			this.playedNewGameButton = false;
+			this.playedOptionsButton = false;
+			if(this.playedContinueGameButton == false) {
+				this.playedContinueGameButton = true;
+				super.clickSound.play();
+			}
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/2.0f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/2.0f);
+		}else if(this.optionsButton.isOver()) {
+			this.playedContinueGameButton = false;
+			this.playedUpdatesButton = false;
+			if(this.playedOptionsButton == false) {
+				this.playedOptionsButton = true;
+				super.clickSound.play();
+			}
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/2.7f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/2.7f);
+		}else if(this.updatesButton.isOver()) {
+			this.playedOptionsButton = false;
+			this.playedExitButton = false;
+			if(this.playedUpdatesButton == false) {
+				this.playedUpdatesButton = true;
+				super.clickSound.play();
+			}
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/4.153f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/4.153f);
+		}else if(this.exitButton.isOver()) {
+			this.playedUpdatesButton = false;
+			if(this.playedExitButton == false) {
+				this.playedExitButton = true;
+				super.clickSound.play();
+			}
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/9.0f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/9.0f);
+		}else {
+			this.playedNewGameButton = false;
+			this.playedContinueGameButton = false;
+			this.playedOptionsButton = false;
+			this.playedUpdatesButton = false;
+			this.playedExitButton = false;
+		}
+		super.font.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/2.1694f, Gdx.graphics.getHeight()/1.44f);
+		super.font.draw(super.batch, "CONTINUE GAME", Gdx.graphics.getWidth()/2.2456f, Gdx.graphics.getHeight()/1.7704f);
+		super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/2.3225f);
+		super.font.draw(super.batch, "UPDATES", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/3.323f);
+		super.font.draw(super.batch, "EXIT", Gdx.graphics.getWidth()/2.0869f, Gdx.graphics.getHeight()/5.837f);
+		super.font.draw(super.batch, "Version-Alpha", 1780, 25);
+		super.batch.end();
+
+		this.optionsButton.addListener(UIFactory.createListener(ScreenEnum.OptionsMenuScreen));
+
+		if(this.exitButton.isPressed()) this.exit();
 	}
 
 	public void update(float dt) {
@@ -151,7 +182,7 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public void resize(int width, int height) {
-
+		
 	}
 
 	@Override
@@ -166,16 +197,19 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public void hide() {
-
+		
 	}
 
 	@Override
 	public void dispose() {
 		this.mainPicture.dispose();
 		this.buttonLight.dispose();
-		this.Buttonstage.dispose();
-		this.DeathIsAnotherPath.dispose();
-		this.cursor.dispose();
-		this.game.dispose();
+		this.ButtonStage.dispose();
+		this.DeathIsAnotherPath.stop();
+		super.dispose();
+	}
+
+	public void exit() {
+		Gdx.app.exit();
 	}
 }
