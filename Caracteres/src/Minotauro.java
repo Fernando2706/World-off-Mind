@@ -7,7 +7,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.mygdx.game.WorldOffMind;
+import com.worldoffmind.game.WorldOffMind;
+
 
 public class Minotauro extends Caracteres {
 	
@@ -22,30 +23,30 @@ public class Minotauro extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul2.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul2.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul2.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul2.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo2.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo2.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo2.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo2.png")));
 	
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul3.png")))
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo3.png")))
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul3.png")))
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo3.png")))
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul3.png")))
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo3.png")))
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul3.png")))
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo3.png")))
 	};
 	public Minotauro(WorldOffMind game,float x, float y) {
 		super(game);
@@ -63,7 +64,7 @@ public class Minotauro extends Caracteres {
 		animationParadoD=new Animation(0.35f,animacionParadoD);
 		animationParadoI=new Animation(0.35f,animacionParadoI);
 		this.state=state.IDLELeft;
-		rect=new Rectangle(x,y,49,64);
+		rect=new Rectangle(x,y,75,100);
 		currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
 	}
 	@Override
@@ -108,6 +109,9 @@ public class Minotauro extends Caracteres {
 		
 	}
 	public void update(float dt) {
+		if(hp<=0) {
+			dead=true;
+		}
 		if(position.x<=(700)) {
 			move(new Vector2(dt, 0));
 			state=state.RIGHT;

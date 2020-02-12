@@ -1,40 +1,59 @@
-package com.mygdx.game;
+package com.worldoffmind.game;
 
-import java.util.Vector;
+import java.util.Iterator;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import ataqueJugador.Ataque;
-import ataqueJugador.AtaqueFuego;
-import personajes.Araña;
+import com.badlogic.gdx.utils.TimeUtils;
+
+import Attack.Ataque;
+import Attack.AtaqueFuego;
+import personajes.Caracteres;
 import personajes.JugadorPrincipal;
 import personajes.Minotauro;
-import com.badlogic.gdx.math.Rectangle;
-
 
 public class WorldOffMind extends Game {
 	public SpriteBatch batch;
 	public BitmapFont font;
 	JugadorPrincipal jugador;
 	Minotauro minotauro;
-	AtaqueFuego fuego;
-	Array<Rectangle> ataques;
+	Array<Ataque> ataques;
+	Array<Caracteres> enemies;
+	long lastSpell;
+	public void createAttack(String dire) {
+		AtaqueFuego a= new AtaqueFuego(this, this.jugador.position.x+20, this.jugador.position.y+20);
+		if(dire.equals("izquierda")) {
+			a.state=a.state.LEFT;
+		}else if(dire.equals("derecha")) {
+			a.state=a.state.RIGHT;
+		}else if(dire.equals("arriba")) {
+			a.state=a.state.UP;
+		}else if(dire.equals("abajo")){
+			a.state=a.state.DOWN;
+		}
+		lastSpell=TimeUtils.nanoTime();
+		ataques.add(a);
 
+	}
 	@Override
 	public void create () {
 		this.batch=new SpriteBatch();
 		this.font=new BitmapFont();
 		jugador=new JugadorPrincipal(this, 10, 10);
 		minotauro=new Minotauro(this, 500, 500);
-		fuego=new AtaqueFuego(this,100,100);
-		ataques=new Array<Rectangle>();
+		ataques=new Array<Ataque>();
+		enemies=new Array<Caracteres>();
+		enemies.add(minotauro);
 
 	}
+	
 
 	String estado="";
 	boolean atacando=false;
@@ -56,7 +75,7 @@ public class WorldOffMind extends Game {
 			else {
 				jugador.state=	jugador.state.LEFT;
 				jugador.move(new Vector2(-dt, 0));
-				estado="izq";
+				estado="izquierda";
 				atacando=false;
 			}
 			if(tocando) {
@@ -104,25 +123,35 @@ public class WorldOffMind extends Game {
 				estado="abajo";
 				atacando=false;
 			}
-
-
-
 		}
 
 		else if(Gdx.input.isKeyPressed(Keys.Q)){
-			//font.draw(batch, "Manu Guapeton", this.jugador.position.x+20, this.jugador.position.y+20);this.batch.end();	
-			//this.fuego.render();
-			if(estado.contentEquals("izq")) {
+
+			if(estado.contentEquals("izquierda")) {
 				jugador.state=jugador.state.attackLeft;
-				//this.batch.end();	
+				if(TimeUtils.nanoTime()-lastSpell>500000000) {
+					createAttack("izquierda");
+				}
+			
 			}else if(estado.contentEquals("derecha")) {
 				jugador.state=jugador.state.attackRight;
-				//his.batch.end();	
+				if(TimeUtils.nanoTime()-lastSpell>500000000) {
+					createAttack("derecha");
+				}
 			}
 			else if(estado.contentEquals("arriba")) {				
 				jugador.state=jugador.state.attackUp;
-			}else if(estado.contentEquals("abajo")) {
+				if(TimeUtils.nanoTime()-lastSpell>500000000) {
+					createAttack("arriba");
+
+				}
+			}
+			else if(estado.contentEquals("abajo")) {
 				jugador.state=jugador.state.attackDown;
+				if(TimeUtils.nanoTime()-lastSpell>500000000) {
+					createAttack("abajo");
+				}
+
 			}
 		}
 		else if(atacando==true) {
@@ -131,7 +160,7 @@ public class WorldOffMind extends Game {
 		}
 		else {
 			atacando=false;
-			if(estado.contentEquals("izq")) {
+			if(estado.contentEquals("izquierda")) {
 				jugador.state=jugador.state.IDLELeft;
 			}else if(estado.contentEquals("derecha")) {
 				jugador.state=jugador.state.IDLERight;
@@ -173,15 +202,43 @@ public class WorldOffMind extends Game {
 		update(dt);
 		this.batch.begin();
 		this.jugador.render();
-		this.minotauro.render();
-		this.fuego.render();
+		for(Caracteres a:enemies) {
+			a.render();
+		}
+		for(Ataque a:ataques) {
+			a.render();
+		}
+			
 		this.batch.end();
 	}
 
 	public void update(float dt) {
+		Iterator<Ataque> iter=ataques.iterator();
+		while(iter.hasNext()) {
+			Ataque a=iter.next();
+			if(a.keep==false) {
+				iter.remove();
+			}
+			for(Caracteres b:enemies) {
+				if(a.rect.overlaps(b.rect)) {
+					a.keep=false;
+					iter.remove();
+					minotauro.hp-=50;
+				}
+			}
+		}
+		Iterator<Caracteres> iter2=enemies.iterator();
+		while(iter2.hasNext()) {
+			Caracteres a=iter2.next();
+			if(a.dead==true) {
+				iter2.remove();
+			}
+			
+		}
 		jugador.update(dt);
 		minotauro.update(dt);
-		fuego.update(dt);
+		for(Ataque a: ataques)
+			a.update(dt);
 	}
 	@Override
 	public void pause() {
@@ -204,5 +261,3 @@ public class WorldOffMind extends Game {
 
 
 }
-
-

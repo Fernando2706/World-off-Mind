@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.mygdx.game.WorldOffMind;
+import com.worldoffmind.game.WorldOffMind;
 
 public class JugadorPrincipal extends Caracteres {
 	Animation animationAArriba;
@@ -25,90 +25,90 @@ public class JugadorPrincipal extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("ParadoDerecha.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("ParadoIzquierda.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ParadoArriba.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("ParadoAbajo.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Player/ParadoDerecha.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("Player/ParadoIzquierda.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("Player/ParadoArriba.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("Player/ParadoAbajo.png")));
 
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha7.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarDerecha8.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha6.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha7.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarDerecha8.png")))
 
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera7.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarIzquiera8.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera6.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera7.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarIzquiera8.png")))
 
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo7.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarAbajo8.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo6.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo7.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarAbajo8.png")))
 
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba6.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba7.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AndarArriba8.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba6.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba7.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AndarArriba8.png")))
 
 	};
 	TextureRegion [] animacionAArriba= {
-			new Sprite(new Texture(Gdx.files.internal("AtacarArriba.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarArriba1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarArriba2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarArrib3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarArriba4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarArriba5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarArriba6.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArriba.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArriba1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArriba2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArrib3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArriba4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArriba5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarArriba6.png")))
 	};
 	TextureRegion [] animacionAAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarAbajo6.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarAbajo6.png")))
 	};
 	TextureRegion [] animacionADerecha= {
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarDerecha6.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarDerecha6.png")))
 	};
 	TextureRegion [] animacionAIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda3.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda4.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda5.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AtacarIzquierda6.png")))
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda3.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda4.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda5.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda6.png")))
 	};
 
 	public JugadorPrincipal(WorldOffMind game,float x,float y) {
