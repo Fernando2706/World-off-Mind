@@ -1,4 +1,4 @@
-package com.worldoffmind.game;
+package com.mygdx.game;
 
 import java.util.Vector;
 
@@ -9,34 +9,34 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.Array;
 
-import personajes.Araña;
+import ataqueJugador.Ataque;
+import ataqueJugador.AtaqueFuego;
+import personajes.AraÃ±a;
 import personajes.JugadorPrincipal;
 import personajes.Minotauro;
+
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
+
 
 public class WorldOffMind extends Game {
 	public SpriteBatch batch;
 	public BitmapFont font;
 	JugadorPrincipal jugador;
 	Minotauro minotauro;
-	Vector<Araña> enemigos=new Vector<Araña>();
-	public void crearEnemigos() {
-		for(int i=0;i<20;i++) {
-			float x= MathUtils.random(0,Gdx.graphics.getBackBufferWidth()-20);
-			float y =MathUtils.random(0,Gdx.graphics.getBackBufferHeight()-20);
-			Araña a=new Araña(this,x,y);
-			enemigos.add(a);
-			
-		}
-	}
+	AtaqueFuego fuego;
+	Array<Rectangle> ataques;
+
 	@Override
 	public void create () {
 		this.batch=new SpriteBatch();
 		this.font=new BitmapFont();
 		jugador=new JugadorPrincipal(this, 10, 10);
 		minotauro=new Minotauro(this, 500, 500);
-		crearEnemigos();
+		fuego=new AtaqueFuego(this,100,100);
+		ataques=new Array<Rectangle>();
 
 	}
 
@@ -45,14 +45,9 @@ public class WorldOffMind extends Game {
 	boolean tocando=false;
 
 	private void handleInput(float dt) {
-		
-		
-		for(Araña a:enemigos) {
-			if(jugador.rect.overlaps(a.rect)) {
-				tocando=true;
-				break;
-			}
-		}
+
+
+
 		if(Gdx.input.isKeyPressed(Keys.ESCAPE)) {
 			Gdx.app.exit();
 		}
@@ -118,13 +113,17 @@ public class WorldOffMind extends Game {
 
 		}
 
-		else if(Gdx.input.isKeyPressed(Keys.Q)){
+		else if(Gdx.input.isKeyJustPressed(Keys.Q)){
+			//font.draw(batch, "Manu Guapeton", this.jugador.position.x+20, this.jugador.position.y+20);this.batch.end();	
+			//this.fuego.render();
 			if(estado.contentEquals("izq")) {
 				jugador.state=jugador.state.attackLeft;
+				//this.batch.end();	
 			}else if(estado.contentEquals("derecha")) {
 				jugador.state=jugador.state.attackRight;
+				//his.batch.end();	
 			}
-			else if(estado.contentEquals("arriba")) {
+			else if(estado.contentEquals("arriba")) {				
 				jugador.state=jugador.state.attackUp;
 			}else if(estado.contentEquals("abajo")) {
 				jugador.state=jugador.state.attackDown;
@@ -176,23 +175,17 @@ public class WorldOffMind extends Game {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		handleInput(dt);
 		update(dt);
-		batch.begin();
-		jugador.render();
-		minotauro.render();
-		for(Araña a:enemigos) {
-			a.render();
-		}
-		batch.end();
-
-
+		this.batch.begin();
+		this.jugador.render();
+		this.minotauro.render();
+		this.fuego.render();
+		this.batch.end();
 	}
 
 	public void update(float dt) {
 		jugador.update(dt);
 		minotauro.update(dt);
-		for(Araña a:enemigos) {
-			a.update(dt);
-		}
+		fuego.update(dt);
 	}
 	@Override
 	public void pause() {
@@ -215,3 +208,5 @@ public class WorldOffMind extends Game {
 
 
 }
+
+

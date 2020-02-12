@@ -7,10 +7,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 
-public class Araña extends Caracteres {
+public class AraÃ±a extends Caracteres {
 	public static final float SPEED = 150f;
 
 	public enum State{
@@ -22,32 +22,32 @@ public class Araña extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("DerechaAraña1.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("IzquierdaAraña1.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ArribaAraña1.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("AbajoAraña1.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("DerechaAraÃ±a1.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("IzquierdaAraÃ±a1.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ArribaAraÃ±a1.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("AbajoAraÃ±a1.png")));
 	
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("DerechaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("DerechaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("DerechaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("DerechaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("DerechaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("DerechaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("IzquierdaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("IzquierdaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("IzquierdaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("ArribaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("ArribaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("ArribaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("ArribaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("ArribaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("ArribaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("AbajoAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AbajoAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AbajoAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("AbajoAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AbajoAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AbajoAraÃ±a3.png")))
 	};
-	public Araña(WorldOffMind game,float x, float y) {
+	public AraÃ±a(WorldOffMind game,float x, float y) {
 		
 		super(game);
 		hp=300;

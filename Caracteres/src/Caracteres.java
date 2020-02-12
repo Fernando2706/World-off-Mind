@@ -1,10 +1,11 @@
+package personajes;
+
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 public abstract class Caracteres implements Screen{
 	public boolean dead;
@@ -22,6 +23,7 @@ public abstract class Caracteres implements Screen{
 	Animation animationParadoI;
 	Animation animationParadoAr;
 	Animation animationParadoAb;
+	//YA ME JODERIA
 
 
 	public TextureRegion currentFrame;

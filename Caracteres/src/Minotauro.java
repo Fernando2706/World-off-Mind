@@ -7,8 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
-
+import com.mygdx.game.WorldOffMind;
 
 public class Minotauro extends Caracteres {
 	
@@ -23,30 +22,30 @@ public class Minotauro extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroRojo2.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroRojo2.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroRojo2.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroRojo2.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul2.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul2.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul2.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul2.png")));
 	
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("DerechaMinotauroAzul3.png")))
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("IzquierdaMinotauroAzul3.png")))
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("ArribaMinotauroAzul3.png")))
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("AbajoMinotauroAzul3.png")))
 	};
 	public Minotauro(WorldOffMind game,float x, float y) {
 		super(game);
@@ -55,14 +54,14 @@ public class Minotauro extends Caracteres {
 		defensa=5;
 		dead=false;
 		position=new Vector2(x,y);
-		animationDerecha=new Animation(0.25f,animacionDerecha);
-		animationAbajo=new Animation(0.25f,animacionAbajo);
-		animationArriba=new Animation(0.25f,animacionArriba);
-		animationIzquierda=new Animation(0.25f,animacionIzquierda);
-		animationParadoAb=new Animation(0.25f,animacionParadoAb);
-		animationParadoAr=new Animation(0.25f,animacionParadoAr);
-		animationParadoD=new Animation(0.25f,animacionParadoD);
-		animationParadoI=new Animation(0.25f,animacionParadoI);
+		animationDerecha=new Animation(0.35f,animacionDerecha);
+		animationAbajo=new Animation(0.35f,animacionAbajo);
+		animationArriba=new Animation(0.35f,animacionArriba);
+		animationIzquierda=new Animation(0.35f,animacionIzquierda);
+		animationParadoAb=new Animation(0.35f,animacionParadoAb);
+		animationParadoAr=new Animation(0.35f,animacionParadoAr);
+		animationParadoD=new Animation(0.35f,animacionParadoD);
+		animationParadoI=new Animation(0.35f,animacionParadoI);
 		this.state=state.IDLELeft;
 		rect=new Rectangle(x,y,49,64);
 		currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
@@ -109,7 +108,6 @@ public class Minotauro extends Caracteres {
 		
 	}
 	public void update(float dt) {
-		System.out.println(dt);
 		if(position.x<=(700)) {
 			move(new Vector2(dt, 0));
 			state=state.RIGHT;
