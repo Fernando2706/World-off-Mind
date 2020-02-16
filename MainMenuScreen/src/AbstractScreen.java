@@ -1,25 +1,24 @@
 package com.worldoffmind.game;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 public abstract class AbstractScreen implements Screen{
 	
 	public SpriteBatch batch;
 	public BitmapFont font;
 	public OrthographicCamera camera;
-	public Sound clickSound;
+	private ExtendViewport viewport;
 	
 	protected AbstractScreen() {
 		this.batch = new SpriteBatch();
 		this.font = new BitmapFont();
 		this.camera = new OrthographicCamera();
-		this.clickSound = Gdx.audio.newSound(Gdx.files.internal("clickSound.wav"));
-		this.clickSound.setVolume(0, 0.4f);
+		
+		this.viewport = new ExtendViewport(1920, 1080, this.camera);
 	}
 
 	// Subclasses must load actors in this method
@@ -35,7 +34,7 @@ public abstract class AbstractScreen implements Screen{
 	
 	@Override
 	public void resize(int width, int height) {
-		
+		this.viewport.update(width, height, true);
 	}
 
 	@Override
@@ -57,6 +56,5 @@ public abstract class AbstractScreen implements Screen{
 	public void dispose() {
 		this.batch.dispose();
 		this.font.dispose();
-		this.clickSound.dispose();
 	}
 }

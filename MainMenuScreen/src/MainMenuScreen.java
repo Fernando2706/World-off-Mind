@@ -10,11 +10,9 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class MainMenuScreen extends AbstractScreen{
 
-	private Texture buttonLight, buttonDark, mainPicture;
 	private Button newGameButton, continueGameButton, optionsButton, updatesButton, exitButton;
 	private TextureRegion [] animatedTorchImages;
 	private TextureRegion torch;
@@ -27,10 +25,6 @@ public class MainMenuScreen extends AbstractScreen{
 	public MainMenuScreen() {
 		super.font.setColor(Color.GOLDENROD);
 		super.font.getData().setScale(1.5f, 1.5f);
-
-		this.mainPicture = new Texture(Gdx.files.internal("MainMenuTextures/mainPicture.jpg"));
-		this.buttonLight = new Texture(Gdx.files.internal("MainMenuTextures/buttonLight.png"));
-		this.buttonDark = new Texture(Gdx.files.internal("MainMenuTextures/buttonDark.png"));
 		
 		this.animatedTorchImages = new TextureRegion [] {
 				new Sprite(new Texture(Gdx.files.internal("MainMenuTextures/AnimatedTorch/darkTorch1.png"))),
@@ -51,32 +45,28 @@ public class MainMenuScreen extends AbstractScreen{
 
 		// Music for the main menu
 		this.DeathIsAnotherPath = Gdx.audio.newMusic(Gdx.files.internal("MainMenuTextures/Music/DeathIsJustAnotherPath.mp3"));
-		this.DeathIsAnotherPath.setVolume(0.2f);
+		this.DeathIsAnotherPath.setVolume(0.1f);
 		this.DeathIsAnotherPath.setLooping(true);
-
+		
 		this.ButtonStage = new Stage();
-		Gdx.input.setInputProcessor(this.ButtonStage);
 	}
 
 	@Override
 	public void buildStage() {
+		Gdx.input.setInputProcessor(this.ButtonStage);
+		
 		// Main menu buttons
-		this.newGameButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
-		this.continueGameButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
-		this.optionsButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
-		this.updatesButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
-		this.exitButton = new Button(new TextureRegionDrawable(new TextureRegion(this.buttonDark)));
+		this.newGameButton = new Button();
+		this.continueGameButton = new Button();
+		this.optionsButton = new Button();
+		this.updatesButton = new Button();
+		this.exitButton = new Button();
 
-		this.newGameButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/1.695f, 420, 200);
-		this.newGameButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
-		this.continueGameButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/2.175f, 420, 200);
-		this.continueGameButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
-		this.optionsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/3.04f, 420, 200);
-		this.optionsButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
-		this.updatesButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/5.023f, 420, 200);
-		this.updatesButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
-		this.exitButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/14.4f, 420, 200);
-		this.exitButton.getStyle().over = new TextureRegionDrawable(new TextureRegion(this.buttonLight));
+		this.newGameButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/1.542f, 420, 80);
+		this.continueGameButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/1.928f, 420, 80);
+		this.optionsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/2.602f, 420, 80);
+		this.updatesButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/3.927f, 420, 80);
+		this.exitButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/8.0f, 420, 80);
 
 		this.ButtonStage.addActor(this.newGameButton);
 		this.ButtonStage.addActor(this.continueGameButton);
@@ -93,61 +83,60 @@ public class MainMenuScreen extends AbstractScreen{
 
 		super.camera.update();
 		super.batch.setProjectionMatrix(super.camera.combined);
-		super.camera.setToOrtho(false, 1920, 1080);
+		super.camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
 		super.batch.begin();
-		if(Gdx.graphics.isFullscreen()) {
-			super.batch.draw(this.mainPicture, 0, 0);
-		}
+		super.batch.draw(World.mainPicture, 0, 0);
 		super.batch.end();
 
 		this.ButtonStage.act(delta);
-		this.ButtonStage.draw();
 		
 		super.batch.begin();
+		super.batch.draw(World.darkButton, this.newGameButton.getX(), this.newGameButton.getY(), 420, 80);
+		super.batch.draw(World.darkButton, this.continueGameButton.getX(), this.continueGameButton.getY(), 420, 80);
+		super.batch.draw(World.darkButton, this.optionsButton.getX(), this.optionsButton.getY(), 420, 80);
+		super.batch.draw(World.darkButton, this.updatesButton.getX(), this.updatesButton.getY(), 420, 80);
+		super.batch.draw(World.darkButton, this.exitButton.getX(), this.exitButton.getY(), 420, 80);
 		if(this.newGameButton.isOver()) {
-			this.playedContinueGameButton = false;
 			if(this.playedNewGameButton == false) {
 				this.playedNewGameButton = true;
-				super.clickSound.play();
+				World.clickSound.play();
 			}
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/1.5766f);
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/1.5766f);
+			super.batch.draw(World.lightButton, this.newGameButton.getX(), this.newGameButton.getY(), this.newGameButton.getWidth(), this.newGameButton.getHeight());
 		}else if(this.continueGameButton.isOver()) {
-			this.playedNewGameButton = false;
-			this.playedOptionsButton = false;
 			if(this.playedContinueGameButton == false) {
 				this.playedContinueGameButton = true;
-				super.clickSound.play();
+				World.clickSound.play();
 			}
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/2.0f);
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/2.0f);
+			super.batch.draw(World.lightButton, this.continueGameButton.getX(), this.continueGameButton.getY(), this.continueGameButton.getWidth(), this.newGameButton.getHeight());
 		}else if(this.optionsButton.isOver()) {
-			this.playedContinueGameButton = false;
-			this.playedUpdatesButton = false;
 			if(this.playedOptionsButton == false) {
 				this.playedOptionsButton = true;
-				super.clickSound.play();
+				World.clickSound.play();
 			}
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/2.7f);
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/2.7f);
+			super.batch.draw(World.lightButton, this.optionsButton.getX(), this.optionsButton.getY(), this.optionsButton.getWidth(), this.optionsButton.getHeight());
 		}else if(this.updatesButton.isOver()) {
-			this.playedOptionsButton = false;
-			this.playedExitButton = false;
 			if(this.playedUpdatesButton == false) {
 				this.playedUpdatesButton = true;
-				super.clickSound.play();
+				World.clickSound.play();
 			}
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/4.153f);
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/4.153f);
+			super.batch.draw(World.lightButton, this.updatesButton.getX(), this.updatesButton.getY(), this.updatesButton.getWidth(), this.updatesButton.getHeight());
 		}else if(this.exitButton.isOver()) {
-			this.playedUpdatesButton = false;
 			if(this.playedExitButton == false) {
 				this.playedExitButton = true;
-				super.clickSound.play();
+				World.clickSound.play();
 			}
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/9.0f);
 			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/9.0f);
+			super.batch.draw(World.lightButton, this.exitButton.getX(), this.exitButton.getY(), this.exitButton.getWidth(), this.exitButton.getHeight());
 		}else {
 			this.playedNewGameButton = false;
 			this.playedContinueGameButton = false;
@@ -155,6 +144,13 @@ public class MainMenuScreen extends AbstractScreen{
 			this.playedUpdatesButton = false;
 			this.playedExitButton = false;
 		}
+		
+		if(this.newGameButton.isPressed()) super.batch.draw(World.pressedButton, this.newGameButton.getX(), this.newGameButton.getY(), this.newGameButton.getWidth(), this.newGameButton.getHeight());
+		if(this.continueGameButton.isPressed()) super.batch.draw(World.pressedButton, this.continueGameButton.getX(), this.continueGameButton.getY(), this.continueGameButton.getWidth(), this.continueGameButton.getHeight());
+		if(this.optionsButton.isPressed()) super.batch.draw(World.pressedButton, this.optionsButton.getX(), this.optionsButton.getY(), this.optionsButton.getWidth(), this.optionsButton.getHeight());
+		if(this.updatesButton.isPressed()) super.batch.draw(World.pressedButton, this.updatesButton.getX(), this.updatesButton.getY(), this.updatesButton.getWidth(), this.updatesButton.getHeight());
+		if(this.exitButton.isPressed()) super.batch.draw(World.pressedButton, this.exitButton.getX(), this.updatesButton.getY(), this.updatesButton.getWidth(), this.updatesButton.getHeight());
+		
 		super.font.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/2.1694f, Gdx.graphics.getHeight()/1.44f);
 		super.font.draw(super.batch, "CONTINUE GAME", Gdx.graphics.getWidth()/2.2456f, Gdx.graphics.getHeight()/1.7704f);
 		super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/2.3225f);
@@ -163,7 +159,7 @@ public class MainMenuScreen extends AbstractScreen{
 		super.font.draw(super.batch, "Version-Alpha", 1780, 25);
 		super.batch.end();
 
-		this.optionsButton.addListener(UIFactory.createListener(ScreenEnum.OptionsMenuScreen));
+		this.optionsButton.addListener(UIFactory.createListener(World.OptionsMenuScreen));
 
 		if(this.exitButton.isPressed()) this.exit();
 	}
@@ -177,7 +173,7 @@ public class MainMenuScreen extends AbstractScreen{
 
 	@Override
 	public void show() {
-		this.DeathIsAnotherPath.play();
+		//this.DeathIsAnotherPath.play();
 	}
 
 	@Override
@@ -202,11 +198,7 @@ public class MainMenuScreen extends AbstractScreen{
 
 	@Override
 	public void dispose() {
-		this.mainPicture.dispose();
-		this.buttonLight.dispose();
-		this.ButtonStage.dispose();
-		this.DeathIsAnotherPath.stop();
-		super.dispose();
+		
 	}
 
 	public void exit() {
