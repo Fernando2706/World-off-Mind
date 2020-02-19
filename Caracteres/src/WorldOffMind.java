@@ -1,4 +1,4 @@
-package com.worldoffmind.game;
+package com.mygdx.game;
 
 import java.util.Iterator;
 
@@ -18,12 +18,14 @@ import Attack.AtaqueFuego;
 import personajes.Caracteres;
 import personajes.JugadorPrincipal;
 import personajes.Minotauro;
+import personajes.Spider;
 
 public class WorldOffMind extends Game {
 	public SpriteBatch batch;
 	public BitmapFont font;
 	JugadorPrincipal jugador;
 	Minotauro minotauro;
+	Spider spider;
 	Array<Ataque> ataques;
 	Array<Caracteres> enemies;
 	long lastSpell;
@@ -48,9 +50,11 @@ public class WorldOffMind extends Game {
 		this.font=new BitmapFont();
 		jugador=new JugadorPrincipal(this, 10, 10);
 		minotauro=new Minotauro(this, 500, 500);
+		spider=new Spider(this,"Ice2",200,200);
 		ataques=new Array<Ataque>();
 		enemies=new Array<Caracteres>();
 		enemies.add(minotauro);
+		enemies.add(spider);
 
 	}
 	
@@ -223,7 +227,7 @@ public class WorldOffMind extends Game {
 				if(a.rect.overlaps(b.rect)) {
 					a.keep=false;
 					iter.remove();
-					minotauro.hp-=50;
+					b.hp-=50;
 				}
 			}
 		}

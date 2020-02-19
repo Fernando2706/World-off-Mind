@@ -7,10 +7,10 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 
-public class Araña extends Caracteres {
+public class AraÃ±a extends Caracteres {
 	public static final float SPEED = 150f;
 
 	public enum State{
@@ -22,32 +22,32 @@ public class Araña extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña1.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña1.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña1.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña1.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a1.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a1.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a1.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a1.png")));
 	
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a3.png")))
 	};
-	public Araña(WorldOffMind game,float x, float y) {
+	public AraÃ±a(WorldOffMind game,float x, float y) {
 		
 		super(game);
 		hp=300;
@@ -55,17 +55,17 @@ public class Araña extends Caracteres {
 		defensa=5;
 		dead=false;
 		position=new Vector2(x,y);
-		animationDerecha=new Animation(0.15f,animacionDerecha);
-		animationAbajo=new Animation(0.15f,animacionAbajo);
-		animationArriba=new Animation(0.15f,animacionArriba);
-		animationIzquierda=new Animation(0.15f,animacionIzquierda);
-		animationParadoAb=new Animation(0.15f,animacionParadoAb);
-		animationParadoAr=new Animation(0.15f,animacionParadoAr);
-		animationParadoD=new Animation(0.15f,animacionParadoD);
-		animationParadoI=new Animation(0.15f,animacionParadoI);
+		animationRight=new Animation(0.15f,animacionDerecha);
+		animationDown=new Animation(0.15f,animacionAbajo);
+		animationUp=new Animation(0.15f,animacionArriba);
+		animationLeft=new Animation(0.15f,animacionIzquierda);
+		animationIdleDown=new Animation(0.15f,animacionParadoAb);
+		animationIdleUp=new Animation(0.15f,animacionParadoAr);
+		animationIdleRight=new Animation(0.15f,animacionParadoD);
+		animationIdleLeft=new Animation(0.15f,animacionParadoI);
 		this.state=state.IDLERight;
 		rect=new Rectangle(x,y,47,63);
-		currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
+		currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 	}
 
 	@Override
@@ -127,31 +127,31 @@ public class Araña extends Caracteres {
 		}
 		switch (this.state) {
 		case RIGHT:
-			currentFrame = (TextureRegion) animationDerecha.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationRight.getKeyFrame(stateTime, true);
 			break;
 		case LEFT:
-			currentFrame = (TextureRegion) animationIzquierda.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationLeft.getKeyFrame(stateTime, true);
 			break;
 		case UP:
-			currentFrame = (TextureRegion) animationArriba.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationUp.getKeyFrame(stateTime, true);
 			break;
 		case DOWN:
-			currentFrame = (TextureRegion) animationAbajo.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationDown.getKeyFrame(stateTime, true);
 			break;
 		case IDLEDown:
-			currentFrame = (TextureRegion) animationParadoAb.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleDown.getKeyFrame(stateTime, true);
 			break;
 		case IDLELeft:
-			currentFrame = (TextureRegion) animationParadoI.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleLeft.getKeyFrame(stateTime, true);
 			break;
 		case IDLEUp:
-			currentFrame = (TextureRegion) animationParadoAr.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleUp.getKeyFrame(stateTime, true);
 			break;
 		case IDLERight:
-			currentFrame = (TextureRegion) animationParadoD.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(stateTime, true);
 			break;
 		default:
-			currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
+			currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 		}
 	}
 

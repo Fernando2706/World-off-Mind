@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 
 public class Minotauro extends Caracteres {
@@ -55,17 +55,17 @@ public class Minotauro extends Caracteres {
 		defensa=5;
 		dead=false;
 		position=new Vector2(x,y);
-		animationDerecha=new Animation(0.35f,animacionDerecha);
-		animationAbajo=new Animation(0.35f,animacionAbajo);
-		animationArriba=new Animation(0.35f,animacionArriba);
-		animationIzquierda=new Animation(0.35f,animacionIzquierda);
-		animationParadoAb=new Animation(0.35f,animacionParadoAb);
-		animationParadoAr=new Animation(0.35f,animacionParadoAr);
-		animationParadoD=new Animation(0.35f,animacionParadoD);
-		animationParadoI=new Animation(0.35f,animacionParadoI);
+		animationRight=new Animation(0.35f,animacionDerecha);
+		animationDown=new Animation(0.35f,animacionAbajo);
+		animationUp=new Animation(0.35f,animacionArriba);
+		animationLeft=new Animation(0.35f,animacionIzquierda);
+		animationIdleDown=new Animation(0.35f,animacionParadoAb);
+		animationIdleUp=new Animation(0.35f,animacionParadoAr);
+		animationIdleRight=new Animation(0.35f,animacionParadoD);
+		animationIdleLeft=new Animation(0.35f,animacionParadoI);
 		this.state=state.IDLELeft;
 		rect=new Rectangle(x,y,75,100);
-		currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
+		currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 	}
 	@Override
 	public void show() {
@@ -124,31 +124,31 @@ public class Minotauro extends Caracteres {
 		stateTime += dt;
 		switch (this.state) {
 		case RIGHT:
-			currentFrame = (TextureRegion) animationDerecha.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationRight.getKeyFrame(stateTime, true);
 			break;
 		case LEFT:
-			currentFrame = (TextureRegion) animationIzquierda.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationLeft.getKeyFrame(stateTime, true);
 			break;
 		case UP:
-			currentFrame = (TextureRegion) animationArriba.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationUp.getKeyFrame(stateTime, true);
 			break;
 		case DOWN:
-			currentFrame = (TextureRegion) animationAbajo.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationDown.getKeyFrame(stateTime, true);
 			break;
 		case IDLEDown:
-			currentFrame = (TextureRegion) animationParadoAb.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleDown.getKeyFrame(stateTime, true);
 			break;
 		case IDLELeft:
-			currentFrame = (TextureRegion) animationParadoI.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleLeft.getKeyFrame(stateTime, true);
 			break;
 		case IDLEUp:
-			currentFrame = (TextureRegion) animationParadoAr.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleUp.getKeyFrame(stateTime, true);
 			break;
 		case IDLERight:
-			currentFrame = (TextureRegion) animationParadoD.getKeyFrame(stateTime, true);
+			currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(stateTime, true);
 			break;
 		default:
-			currentFrame = (TextureRegion) animationParadoD.getKeyFrame(0, true);
+			currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 		}
 	}
 }
