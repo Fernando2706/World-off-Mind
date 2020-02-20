@@ -10,9 +10,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.worldoffmind.game.WorldOffMind;
 
 
-public class Minotauro extends Caracteres {
-	
-	public static final float SPEED = 100f;
+public class SpiderBoss extends Caracteres {
+	public static final float SPEED = 150f;
 
 	public enum State{
 		RIGHT, LEFT, UP, DOWN, IDLELeft, IDLERight, IDLEUp, IDLEDown, attackRight, attackLeft, attackUp, attackDown
@@ -23,98 +22,109 @@ public class Minotauro extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo2.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo2.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo2.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo2.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña1.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña1.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña1.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña1.png")));
 	
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/DerechaMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña3.png")))
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/IzquierdaMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña3.png")))
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/ArribaMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña3.png")))
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("MinotaurRed/AbajoMinotauroRojo3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña3.png")))
 	};
-	public Minotauro(WorldOffMind game,float x, float y) {
+	public SpiderBoss(WorldOffMind game,float x, float y) {
+		
 		super(game);
-		hp=1000;
-		damage=50;
+		hp=300;
+		damage=10;
 		defensa=5;
 		dead=false;
 		position=new Vector2(x,y);
-		animationRight=new Animation(0.35f,animacionDerecha);
-		animationDown=new Animation(0.35f,animacionAbajo);
-		animationUp=new Animation(0.35f,animacionArriba);
-		animationLeft=new Animation(0.35f,animacionIzquierda);
-		animationIdleDown=new Animation(0.35f,animacionParadoAb);
-		animationIdleUp=new Animation(0.35f,animacionParadoAr);
-		animationIdleRight=new Animation(0.35f,animacionParadoD);
-		animationIdleLeft=new Animation(0.35f,animacionParadoI);
-		this.state=State.LEFT;
-		rect=new Rectangle(x,y,75,100);
+		animationRight=new Animation<TextureRegion>(0.15f,animacionDerecha);
+		animationDown=new Animation<TextureRegion>(0.15f,animacionAbajo);
+		animationUp=new Animation<TextureRegion>(0.15f,animacionArriba);
+		animationLeft=new Animation<TextureRegion>(0.15f,animacionIzquierda);
+		animationIdleDown=new Animation<TextureRegion>(0.15f,animacionParadoAb);
+		animationIdleUp=new Animation<TextureRegion>(0.15f,animacionParadoAr);
+		animationIdleRight=new Animation<TextureRegion>(0.15f,animacionParadoD);
+		animationIdleLeft=new Animation<TextureRegion>(0.15f,animacionParadoI);
+		this.state=State.IDLERight;
+		rect=new Rectangle(x,y,47,63);
 		currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 	}
+
 	@Override
 	public void show() {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void resize(int width, int height) {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void pause() {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void hide() {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
 	public void render() {
 		game.batch.draw(currentFrame, position.x, position.y);
-
 		
 	}
 	public void update(float dt) {
-		if(hp<=0) {
-			dead=true;
-		}
-		
 		rect.setPosition(position);
 		stateTime += dt;
+		if(position.x<=(700)) {
+			move(new Vector2(-dt, 0));
+			state=State.LEFT;
+		}if(position.x>=(300)) {
+			move(new Vector2(dt, 0));
+			state=State.RIGHT;
+		}
 		switch (this.state) {
 		case RIGHT:
 			currentFrame = (TextureRegion) animationRight.getKeyFrame(stateTime, true);
@@ -144,4 +154,5 @@ public class Minotauro extends Caracteres {
 			currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 		}
 	}
+
 }
