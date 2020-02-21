@@ -1,5 +1,7 @@
 package personajes;
 
+import java.util.Iterator;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -7,8 +9,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-
-import com.worldoffmind.game.WorldOffMind;
+import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.WorldOffMind;
 
 public class Players extends Caracteres {
 	Animation<?> animationAUp;
@@ -111,6 +113,7 @@ public class Players extends Caracteres {
 			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda5.png"))),
 			new Sprite(new Texture(Gdx.files.internal("Player/AtacarIzquierda6.png")))
 	};
+	TextureRegion currentHp;
 
 	public Players(WorldOffMind game,float x,float y) {
 		super(game);
@@ -129,9 +132,20 @@ public class Players extends Caracteres {
 		animationALeft=new Animation<TextureRegion>(0.1f,animational);
 		this.state=State.IDLERight;
 		rect=new Rectangle(x,y,45,45);
+		hp=100;
 
+		printHp();
 
-
+	}
+	Array<Hearts> hearts=new Array<Hearts>();
+	float xh=0;
+	float yh=Gdx.graphics.getHeight();
+	public void printHp() {
+		int n_hp=hp/10;
+		for(int i=0;i<n_hp;i++) {
+			this.hearts.add(new Hearts(game, xh+36, 36, false));
+			xh+=36;
+		}
 	}
 
 	@Override
@@ -174,6 +188,9 @@ public class Players extends Caracteres {
 
 	@Override
 	public void render() {
+		for(Hearts h:this.hearts) {
+			h.render();
+		}
 		game.batch.draw(currentFrame, position.x, position.y);
 
 
@@ -186,6 +203,8 @@ public class Players extends Caracteres {
 	}
 
 	public void update (float dt) {
+		//printHp();
+
 		//System.out.println("x:"+ position.x+" y: "+position.y);
 		stateTime += dt;
 		if (position.x <= 0)

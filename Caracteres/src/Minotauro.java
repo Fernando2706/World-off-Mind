@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 
 public class Minotauro extends Caracteres {
@@ -63,7 +63,7 @@ public class Minotauro extends Caracteres {
 		animationIdleUp=new Animation(0.35f,animacionParadoAr);
 		animationIdleRight=new Animation(0.35f,animacionParadoD);
 		animationIdleLeft=new Animation(0.35f,animacionParadoI);
-		this.state=State.LEFT;
+		this.state=state.IDLELeft;
 		rect=new Rectangle(x,y,75,100);
 		currentFrame = (TextureRegion) animationIdleRight.getKeyFrame(0, true);
 	}
@@ -112,7 +112,14 @@ public class Minotauro extends Caracteres {
 		if(hp<=0) {
 			dead=true;
 		}
-		
+		if(position.x<=(700)) {
+			move(new Vector2(dt, 0));
+			state=state.RIGHT;
+		}
+		if(position.x>=(300)) {
+			move(new Vector2(-dt, 0));
+			state=state.LEFT;
+		}
 		rect.setPosition(position);
 		stateTime += dt;
 		switch (this.state) {

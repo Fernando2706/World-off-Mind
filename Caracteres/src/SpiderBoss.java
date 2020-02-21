@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 
 public class SpiderBoss extends Caracteres {
@@ -22,30 +22,30 @@ public class SpiderBoss extends Caracteres {
 		movement.scl(SPEED);
 		position.add(movement);
 	}
-	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña1.png")));
-	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña1.png")));
-	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña1.png")));
-	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña1.png")));
+	TextureRegion animacionParadoD= new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a1.png")));
+	TextureRegion animacionParadoI= new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a1.png")));
+	TextureRegion animacionParadoAr= new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a1.png")));
+	TextureRegion animacionParadoAb= new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a1.png")));
 	
 	TextureRegion [] animacionDerecha= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/DerechaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionIzquierda= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/IzquierdaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionArriba= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/ArribaAraÃ±a3.png")))
 	};
 	TextureRegion [] animacionAbajo= {
-			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña1.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña2.png"))),
-			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraña3.png")))
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a1.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a2.png"))),
+			new Sprite(new Texture(Gdx.files.internal("Spider/AbajoAraÃ±a3.png")))
 	};
 	public SpiderBoss(WorldOffMind game,float x, float y) {
 		

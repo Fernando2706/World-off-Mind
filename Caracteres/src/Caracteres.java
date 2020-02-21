@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.worldoffmind.game.WorldOffMind;
+import com.mygdx.game.WorldOffMind;
 
 public abstract class Caracteres implements Screen{
 	public boolean dead;
@@ -15,14 +15,14 @@ public abstract class Caracteres implements Screen{
 	public Vector2 position;
 	public Rectangle rect;
 	float stateTime;
-	Animation<?> animationRight;
-	Animation<?> animationLeft;
-	Animation<?> animationUp;
-	Animation<?> animationDown;
-	Animation<?> animationIdleRight;
-	Animation<?> animationIdleLeft;
-	Animation<?> animationIdleUp;
-	Animation<?> animationIdleDown;
+	Animation animationRight;
+	Animation animationLeft;
+	Animation animationUp;
+	Animation animationDown;
+	Animation animationIdleRight;
+	Animation animationIdleLeft;
+	Animation animationIdleUp;
+	Animation animationIdleDown;
 	//YA ME JODERIA
 
 
@@ -34,4 +34,4 @@ public abstract class Caracteres implements Screen{
 	public abstract void render();
 	public abstract void update(float dt);
 }
-
+//Manu tonto, es bromi , tkm <3
