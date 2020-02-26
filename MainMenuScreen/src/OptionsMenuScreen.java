@@ -17,24 +17,20 @@ public class OptionsMenuScreen extends AbstractScreen{
 	private Stage buttonsStage;
 	private Group buttonsGroup;
 
-	private Button videoButton, volumeButton, gameButton, languageButton, shortCutButton, initialConfigurationButton, applyButton, cancelButton, acceptButton, backMainMenuButton,
+	private Button videoButton, volumeButton, gameButton, shortCutButton, initialConfigurationButton, applyButton, cancelButton, acceptButton, backMainMenuButton,
 				   lockCursorButton, VSyncButton, biggerCursorButton, moreFPS, lessFPS, moreMasterVolumeButton, lessMasterVolumeButton, moreEffectsVolumeButton, lessEffectsVolumeButton,
 				   moreEnvironmentalVolumeButton, lessEnvironmentalVolumeButton, moreMusicVolumeButton, lessMusicVolumeButton, activateAndDeactivateAllSounds, activateAndDeactivateMusic,
-				   lifeMonstersBarButton, damageQuantityButton, healingQuantityButton, defensiveMessagesButton, hourButton, showLanguagesButton, chooseEnglishButton, chooseSpanishButton,
-				   showMonitorsButton, chooseFullScreenButton, chooseWindowedFullScreenButton, showStatsButton;
+				   showLanguagesButton, chooseEnglishButton, chooseSpanishButton, showMonitorsButton, chooseFullScreenButton, chooseWindowedFullScreenButton;
 
-	private boolean videoButtonPlayed, volumeButtonPlayed, gameButtonPlayed, languageButtonPlayed, shortCutButtonPlayed, initialConfigurationButtonPlayed, applyButtonPlayed, cancelButtonPlayed, acceptButtonPlayed,
-					backMainMenuButtonPlayed, videoButtonPressed, volumeButtonPressed, gameButtonPressed, languageButtonPressed, shortCutButtonPressed, lockCursorButtonPressedOneTime,
+	private boolean videoButtonPlayed, volumeButtonPlayed, gameButtonPlayed, shortCutButtonPlayed, initialConfigurationButtonPlayed, applyButtonPlayed, cancelButtonPlayed, acceptButtonPlayed,
+					backMainMenuButtonPlayed, videoButtonPressed, volumeButtonPressed, gameButtonPressed, shortCutButtonPressed, lockCursorButtonPressedOneTime,
 					lockCursorButtonPlayed, VSyncButtonPressedOneTime, VSyncButtonPlayed, biggerCursorButtonPressed, biggerCursorButtonPressedOneTime, biggerCursorButtonPlayed,
 					moreFPSButtonPressed, lessFPSButtonPressed, moreMasterVolumeButtonPressed, lessMasterVolumeButtonPressed, moreEffectsVolumeButtonPressed, lessEffectsVolumeButtonPressed,
 					moreEnvironmentalVolumeButtonPressed, lessEnvironmentalVolumeButtonPressed, moreMusicVolumeButtonPressed, lessMusicVolumeButtonPressed, activateAndDeactivateAllSoundsPressed,
-					activateAndDeactivateAllSoundsPressedOneTime, activateAndDeactivateAllSoundsPlayed, activateAndDeactivateMusicPressed, activateAndDeactivateMusicPressedOneTime,
-					activateAndDeactivateMusicPlayed, lifeMonstersBarButtonPressed, lifeMonstersBarButtonPressedOneTime, lifeMonstersBarButtonPlayed, damageQuantityButtonPressed,
-					damageQuantityButtonPressedOneTime, damageQuantityButtonPlayed, healingQuantityButtonPressed, healingQuantityButtonPressedOneTime, healingQuantityButtonPlayed,
-					defensiveMessagesButtonPressed, defensiveMessagesButtonPressedOneTime, defensiveMessagesButtonPlayed, hourButtonPressed, hourButtonPressedOneTime, hourButtonPlayed,
+					activateAndDeactivateAllSoundsPressedOneTime, activateAndDeactivateAllSoundsPlayed, activateAndDeactivateMusicPressed, activateAndDeactivateMusicPressedOneTime, activateAndDeactivateMusicPlayed,
 					showLanguagesButtonPressed, showLanguagesButtonPressedOneTime, showLanguagesButtonPlayed, chooseEnglishButtonPressed, chooseEnglishButtonPlayed,
 					chooseSpanishButtonPressed, chooseSpanishButtonPlayed, showMonitorsButtonPressed, showMonitorsButtonPressedOneTime, showMonitorsButtonPlayed, chooseFullScreenButtonPressed,
-					chooseFullScreenButtonPlayed, chooseWindowedFullScreenButtonPressed, chooseWindowedFullScreenButtonPlayed, showStatsButtonPressed, showStatsButtonPressedOneTime, showStatsButtonPlayed;
+					chooseFullScreenButtonPlayed, chooseWindowedFullScreenButtonPressed, chooseWindowedFullScreenButtonPlayed;
 	
 	public static boolean lockCursorButtonPressed, VSyncButtonPressed;
 
@@ -73,7 +69,6 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.videoButtonPlayed = false;
 		this.volumeButtonPlayed = false;
 		this.gameButtonPlayed = false;
-		this.languageButtonPlayed = false;
 		this.shortCutButtonPlayed = false;
 		this.initialConfigurationButtonPlayed = false;
 		this.applyButtonPlayed = false;
@@ -84,23 +79,16 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.biggerCursorButtonPlayed = false;
 		this.activateAndDeactivateAllSoundsPlayed = false;
 		this.activateAndDeactivateMusicPlayed = false;
-		this.lifeMonstersBarButtonPlayed = false;
-		this.damageQuantityButtonPlayed = false;
-		this.healingQuantityButtonPlayed = false;
-		this.defensiveMessagesButtonPlayed = false;
-		this.hourButtonPlayed = false;
 		this.showLanguagesButtonPlayed = false;
 		this.chooseEnglishButtonPlayed = false;
 		this.chooseSpanishButtonPlayed = false;
 		this.showMonitorsButtonPlayed = false;
 		this.chooseFullScreenButtonPlayed = false;
 		this.chooseWindowedFullScreenButtonPlayed = false;
-		this.showStatsButtonPlayed = false;
 
 		this.videoButtonPressed = true;
 		this.volumeButtonPressed = false;
 		this.gameButtonPressed = false;
-		this.languageButtonPressed = false;
 		this.shortCutButtonPressed = false;
 		lockCursorButtonPressed = false;
 		this.lockCursorButtonPressedOneTime = false;
@@ -122,16 +110,6 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.activateAndDeactivateAllSoundsPressedOneTime = false;
 		this.activateAndDeactivateMusicPressed = false;
 		this.activateAndDeactivateMusicPressedOneTime = false;
-		this.lifeMonstersBarButtonPressed = false;
-		this.lifeMonstersBarButtonPressedOneTime = false;
-		this.damageQuantityButtonPressed = false;
-		this.damageQuantityButtonPressedOneTime = false;
-		this.healingQuantityButtonPressed = false;
-		this.healingQuantityButtonPressedOneTime = false;
-		this.defensiveMessagesButtonPressed = false;
-		this.defensiveMessagesButtonPressedOneTime = false;
-		this.hourButtonPressed = false;
-		this.hourButtonPressedOneTime = false;
 		this.showLanguagesButtonPressed = false;
 		this.showLanguagesButtonPressedOneTime = false;
 		this.chooseEnglishButtonPressed = true;
@@ -140,8 +118,6 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.showMonitorsButtonPressedOneTime = false;
 		this.chooseFullScreenButtonPressed = true;
 		this.chooseWindowedFullScreenButtonPressed = false;
-		this.showStatsButtonPressed = false;
-		this.showStatsButtonPressedOneTime = false;
 
 		this.integerFPS = 60;
 		this.masterVolume = 50;
@@ -163,7 +139,6 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.videoButton = new Button();
 		this.volumeButton = new Button();
 		this.gameButton = new Button();
-		this.languageButton = new Button();
 		this.shortCutButton = new Button();
 		this.initialConfigurationButton = new Button();
 		this.applyButton = new Button();
@@ -185,24 +160,17 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.lessMusicVolumeButton = new Button();
 		this.activateAndDeactivateAllSounds = new Button();
 		this.activateAndDeactivateMusic = new Button();
-		this.lifeMonstersBarButton = new Button();
-		this.damageQuantityButton = new Button();
-		this.healingQuantityButton = new Button();
-		this.defensiveMessagesButton = new Button();
-		this.hourButton = new Button();
 		this.showLanguagesButton = new Button();
 		this.chooseEnglishButton = new Button();
 		this.chooseSpanishButton = new Button();
 		this.showMonitorsButton = new Button();
 		this.chooseFullScreenButton = new Button();
 		this.chooseWindowedFullScreenButton = new Button();
-		this.showStatsButton = new Button();
 
 		this.videoButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.317f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.volumeButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.4594f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.gameButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.6362f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
-		this.languageButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.862f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
-		this.shortCutButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/2.16f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
+		this.shortCutButton.setBounds(210, 420, 250, 50);
 		this.initialConfigurationButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.cancelButton.setBounds(Gdx.graphics.getWidth()/2.6666f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/13.5f);
 		this.applyButton.setBounds(Gdx.graphics.getWidth()/1.873f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/13.5f);
@@ -223,23 +191,16 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.lessMusicVolumeButton.setBounds(Gdx.graphics.getWidth()/2.0645f, Gdx.graphics.getHeight()/2.3478f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
 		this.activateAndDeactivateAllSounds.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/2.8421f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
 		this.activateAndDeactivateMusic.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/3.375f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.lifeMonstersBarButton.setBounds(Gdx.graphics.getWidth()/2.704f, 840, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.damageQuantityButton.setBounds(Gdx.graphics.getWidth()/2.704f, 760, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.healingQuantityButton.setBounds(Gdx.graphics.getWidth()/2.704f, 680, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.defensiveMessagesButton.setBounds(Gdx.graphics.getWidth()/2.704f, 600, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.hourButton.setBounds(Gdx.graphics.getWidth()/2.704f, 520, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.showLanguagesButton.setBounds(960, 795, 50, 50);
-		this.chooseEnglishButton.setBounds(715, 735, 295, 55);
-		this.chooseSpanishButton.setBounds(715, 675, 295, 55);
-		this.showMonitorsButton.setBounds(960, 795, 50, 50);
-		this.chooseFullScreenButton.setBounds(715, 735, 295, 55);
-		this.chooseWindowedFullScreenButton.setBounds(715, 675, 295, 55);
-		this.showStatsButton.setBounds(Gdx.graphics.getWidth()/2.704f, 440, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
+		this.showLanguagesButton.setBounds(Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
+		this.chooseEnglishButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.46938f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
+		this.chooseSpanishButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
+		this.showMonitorsButton.setBounds(Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
+		this.chooseFullScreenButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.46938f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
+		this.chooseWindowedFullScreenButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
 
 		this.buttonsGroup.addActor(this.videoButton);
 		this.buttonsGroup.addActor(this.volumeButton);
 		this.buttonsGroup.addActor(this.gameButton);
-		this.buttonsGroup.addActor(this.languageButton);
 		this.buttonsGroup.addActor(this.shortCutButton);
 		this.buttonsGroup.addActor(this.initialConfigurationButton);
 		this.buttonsGroup.addActor(this.cancelButton);
@@ -261,18 +222,12 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.buttonsGroup.addActor(this.lessMusicVolumeButton);
 		this.buttonsGroup.addActor(this.activateAndDeactivateAllSounds);
 		this.buttonsGroup.addActor(this.activateAndDeactivateMusic);
-		this.buttonsGroup.addActor(this.lifeMonstersBarButton);
-		this.buttonsGroup.addActor(this.damageQuantityButton);
-		this.buttonsGroup.addActor(this.healingQuantityButton);
-		this.buttonsGroup.addActor(this.defensiveMessagesButton);
-		this.buttonsGroup.addActor(this.hourButton);
 		this.buttonsGroup.addActor(this.showLanguagesButton);
 		this.buttonsGroup.addActor(this.chooseEnglishButton);
 		this.buttonsGroup.addActor(this.chooseSpanishButton);
 		this.buttonsGroup.addActor(this.showMonitorsButton);
 		this.buttonsGroup.addActor(this.chooseFullScreenButton);
 		this.buttonsGroup.addActor(this.chooseWindowedFullScreenButton);
-		this.buttonsGroup.addActor(this.showStatsButton);
 		this.buttonsStage.setRoot(this.buttonsGroup);
 	}
 	
@@ -318,7 +273,6 @@ public class OptionsMenuScreen extends AbstractScreen{
 		super.batch.draw(World.darkButton, this.videoButton.getX(), this.videoButton.getY(), this.videoButton.getWidth(), this.videoButton.getHeight());
 		super.batch.draw(World.darkButton, this.volumeButton.getX(), this.volumeButton.getY(), this.volumeButton.getWidth(), this.volumeButton.getHeight());
 		super.batch.draw(World.darkButton, this.gameButton.getX(), this.gameButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
-		super.batch.draw(World.darkButton, this.languageButton.getX(), this.languageButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
 		super.batch.draw(World.darkButton, this.shortCutButton.getX(), this.shortCutButton.getY(), this.shortCutButton.getWidth(), this.shortCutButton.getHeight());
 		super.batch.draw(World.darkButton, this.initialConfigurationButton.getX(), this.initialConfigurationButton.getY(), this.initialConfigurationButton.getWidth(), this.initialConfigurationButton.getHeight());
 		super.batch.draw(World.darkButton, this.cancelButton.getX(), this.cancelButton.getY(), this.cancelButton.getWidth(), this.cancelButton.getHeight());
@@ -344,22 +298,14 @@ public class OptionsMenuScreen extends AbstractScreen{
 		}else if(this.gameButton.isOver()) {
 			super.batch.draw(World.lightButton, this.gameButton.getX(), this.gameButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
 			this.volumeButtonPlayed = false;
-			this.languageButtonPlayed = false;
+			this.shortCutButtonPlayed = false;
 			if(this.gameButtonPlayed == false && this.gameButtonPressed == false) {
 				this.gameButtonPlayed = true;
 				World.clickSound.play();
 			}
-		}else if(this.languageButton.isOver()) {
-			super.batch.draw(World.lightButton, this.languageButton.getX(), this.languageButton.getY(), this.languageButton.getWidth(), this.languageButton.getHeight());
-			this.gameButtonPlayed = false;
-			this.shortCutButtonPlayed = false;
-			if(this.languageButtonPlayed == false && this.languageButtonPressed == false) {
-				this.languageButtonPlayed = true;
-				World.clickSound.play();
-			}
 		}else if(this.shortCutButton.isOver()) {
 			super.batch.draw(World.lightButton, this.shortCutButton.getX(), this.shortCutButton.getY(), this.shortCutButton.getWidth(), this.shortCutButton.getHeight());
-			this.languageButtonPlayed = false;
+			this.gameButtonPlayed = false;
 			if(this.shortCutButtonPlayed == false && this.shortCutButtonPressed == false) {
 				this.shortCutButtonPlayed = true;
 				World.clickSound.play();
@@ -402,7 +348,6 @@ public class OptionsMenuScreen extends AbstractScreen{
 			this.videoButtonPlayed = false;
 			this.volumeButtonPlayed = false;
 			this.gameButtonPlayed = false;
-			this.languageButtonPlayed = false;
 			this.shortCutButtonPlayed = false;
 			this.initialConfigurationButtonPlayed = false;
 			this.cancelButtonPlayed = false;
@@ -415,35 +360,24 @@ public class OptionsMenuScreen extends AbstractScreen{
 			this.videoButtonPressed = true;
 			this.volumeButtonPressed = false;
 			this.gameButtonPressed = false;
-			this.languageButtonPressed = false;
 			this.shortCutButtonPressed = false;
 			this.reiniciateTableStates();
 		}else if(this.volumeButton.isPressed()) {
 			this.videoButtonPressed = false;
 			this.volumeButtonPressed = true;
 			this.gameButtonPressed = false;
-			this.languageButtonPressed = false;
 			this.shortCutButtonPressed = false;
 			this.reiniciateTableStates();
 		}else if(this.gameButton.isPressed()) {
 			this.videoButtonPressed = false;
 			this.volumeButtonPressed = false;
 			this.gameButtonPressed = true;
-			this.languageButtonPressed = false;
-			this.shortCutButtonPressed = false;
-			this.reiniciateTableStates();
-		}else if(this.languageButton.isPressed()) {
-			this.videoButtonPressed = false;
-			this.volumeButtonPressed = false;
-			this.gameButtonPressed = false;
-			this.languageButtonPressed = true;
 			this.shortCutButtonPressed = false;
 			this.reiniciateTableStates();
 		}else if(this.shortCutButton.isPressed()) {
 			this.videoButtonPressed = false;
 			this.volumeButtonPressed = false;
 			this.gameButtonPressed = false;
-			this.languageButtonPressed = false;
 			this.shortCutButtonPressed = true;
 			this.reiniciateTableStates();
 		}
@@ -472,15 +406,15 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.font.draw(super.batch, "Lock the cursor", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/1.4496f);
 			
 			super.font.draw(super.batch, "Monitor", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2313f);
-			super.batch.draw(World.leftLittleFrame, 710, 790, 5, 60);
-			super.batch.draw(World.bottomLittleFrame, 710, 790, 300, 5);
-			super.batch.draw(World.topLittleFrame, 710, 845, 300, 5);
-			super.batch.draw(World.rightLittleFrame, 1010, 790, 5, 60);
-			super.batch.draw(World.topLeftLittleFrame, 710, 830, 20, 20);
-			super.batch.draw(World.topRightLittleFrame, 995, 830, 20, 20);
-			super.batch.draw(World.bottomLeftLittleFrame, 710, 790, 20, 20);
-			super.batch.draw(World.bottomRightLittleFrame, 995, 790, 20, 20);
-			super.batch.draw(World.backFrame, 715, 795, 295, 50);
+			super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
+			super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+			super.batch.draw(World.topLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2781f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+			super.batch.draw(World.rightLittleFrame, Gdx.graphics.getWidth()/1.9009f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
+			super.batch.draw(World.topLeftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.3012f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.topRightLittleFrame, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.3012f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.bottomLeftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.bottomRightLittleFrame, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/21.6f);
 			if(this.showMonitorsButton.isPressed()) {
 				if(this.showMonitorsButtonPressedOneTime == true) this.showMonitorsButtonPressed = false;
 				else this.showMonitorsButtonPressed = true;
@@ -492,19 +426,19 @@ public class OptionsMenuScreen extends AbstractScreen{
 				this.buttonsGroup.addActor(this.chooseFullScreenButton);
 				this.buttonsGroup.addActor(this.chooseWindowedFullScreenButton);
 				
-				super.batch.draw(World.leftLittleFrame, 710, 670, 5, 120);
-				super.batch.draw(World.bottomLittleFrame, 710, 670, 300, 5);
-				super.batch.draw(World.rightLittleFrame, 1010, 670, 5, 120);
-				super.batch.draw(World.bottomLittleFrame, 710, 730, 300, 5);
-				super.batch.draw(this.leftLittleConection, 710, 775, 20, 35);
-				super.batch.draw(this.leftLittleConection, 710, 715, 20, 35);
-				super.batch.draw(this.rightLittleConection, 995, 775, 20, 35);
-				super.batch.draw(this.rightLittleConection, 995, 715, 20, 35);
-				super.batch.draw(World.bottomLeftLittleFrame, 710, 670, 20, 20);
-				super.batch.draw(World.bottomRightLittleFrame, 995, 670, 20, 20);
-				super.batch.draw(World.backFrame, 715, 795, 295, 50);
-				super.batch.draw(World.backFrame, 715, 735, 295, 55);
-				super.batch.draw(World.backFrame, 715, 675, 295, 55);
+				super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/9.0f);
+				super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+				super.batch.draw(World.rightLittleFrame, Gdx.graphics.getWidth()/1.9009f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/9.0f);
+				super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.47945f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+				super.batch.draw(this.leftLittleConection, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.39354f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(this.leftLittleConection, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.51048f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(this.rightLittleConection, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.39354f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(this.rightLittleConection, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.51048f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(World.bottomLeftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+				super.batch.draw(World.bottomRightLittleFrame, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+				super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/21.6f);
+				super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.46938f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
+				super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
 				if(this.chooseFullScreenButton.isOver()) {
 					this.chooseWindowedFullScreenButtonPlayed = false;
 					super.batch.draw(World.secondBackFrame, this.chooseFullScreenButton.getX(), this.chooseFullScreenButton.getY(), this.chooseFullScreenButton.getWidth(), this.chooseFullScreenButton.getHeight());
@@ -535,27 +469,27 @@ public class OptionsMenuScreen extends AbstractScreen{
 				}
 				if(this.chooseFullScreenButtonPressed == true) super.batch.draw(World.secondBackFrame, this.chooseFullScreenButton.getX(), this.chooseFullScreenButton.getY(), this.chooseFullScreenButton.getWidth(), this.chooseFullScreenButton.getHeight());
 				else if(this.chooseWindowedFullScreenButtonPressed == true) super.batch.draw(World.secondBackFrame, this.chooseWindowedFullScreenButton.getX(), this.chooseWindowedFullScreenButton.getY(), this.chooseWindowedFullScreenButton.getWidth(), this.chooseWindowedFullScreenButton.getHeight());
-				super.font.draw(super.batch, "Full screen", 720, 770);
-				super.font.draw(super.batch, "Windowed(Full screen)", 720, 710);
+				super.font.draw(super.batch, "Full screen", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.40259f);
+				super.font.draw(super.batch, "Windowed(Full screen)", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.52112f);
 			}else {
 				this.buttonsStage.getRoot().removeActor(this.chooseFullScreenButton);
 				this.buttonsStage.getRoot().removeActor(this.chooseWindowedFullScreenButton);
 			}
-			super.batch.draw(this.smallTextBoxBorderless, 960, 795, 50, 50);
+			super.batch.draw(this.smallTextBoxBorderless, Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
 			if(this.showMonitorsButtonPressed == false && this.showMonitorsButtonPressedOneTime == false) {
-				super.batch.draw(this.downButton, this.showMonitorsButton.getX()+10, this.showMonitorsButton.getY()+10, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
+				super.batch.draw(this.downButton, this.showMonitorsButton.getX()+Gdx.graphics.getWidth()/192f, this.showMonitorsButton.getY()+Gdx.graphics.getHeight()/108f, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
 			}else if(this.showMonitorsButtonPressed == true && this.showMonitorsButtonPressedOneTime == false) {
-				super.batch.draw(this.pressedDownButton, this.showMonitorsButton.getX()+10, this.showMonitorsButton.getY()+10, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
+				super.batch.draw(this.pressedDownButton, this.showMonitorsButton.getX()+Gdx.graphics.getWidth()/192f, this.showMonitorsButton.getY()+Gdx.graphics.getHeight()/108f, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
 			}else if(this.showMonitorsButtonPressed == true && this.showMonitorsButtonPressedOneTime == true) {
-				super.batch.draw(this.upButton, this.showMonitorsButton.getX()+10, this.showMonitorsButton.getY()+10, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
+				super.batch.draw(this.upButton, this.showMonitorsButton.getX()+Gdx.graphics.getWidth()/192f, this.showMonitorsButton.getY()+Gdx.graphics.getHeight()/108f, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
 			}else if(this.showMonitorsButtonPressed == false && this.showMonitorsButtonPressedOneTime == true) {
-				super.batch.draw(this.pressedUpButton, this.showMonitorsButton.getX()+10, this.showMonitorsButton.getY()+10, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
+				super.batch.draw(this.pressedUpButton, this.showMonitorsButton.getX()+Gdx.graphics.getWidth()/192f, this.showMonitorsButton.getY()+Gdx.graphics.getHeight()/108f, this.showMonitorsButton.getWidth()/1.5f, this.showMonitorsButton.getHeight()/1.5f);
 			}
 			if(this.showMonitorsButton.isPressed() && this.showMonitorsButtonPlayed == false) {
 				World.clickSound.play();
 				this.showMonitorsButtonPlayed = true;
 			}else if(!this.showMonitorsButton.isPressed()) this.showMonitorsButtonPlayed = false;
-			super.font.draw(super.batch, this.choosedMonitor, 720, 830);
+			super.font.draw(super.batch, this.choosedMonitor, Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.3012f);
 
 			super.batch.draw(this.checkBox, this.VSyncButton.getX(), this.VSyncButton.getY(), this.VSyncButton.getWidth(), this.VSyncButton.getHeight());
 			if(this.VSyncButton.isPressed()) {
@@ -804,117 +738,24 @@ public class OptionsMenuScreen extends AbstractScreen{
 			}else if(!this.activateAndDeactivateMusic.isPressed()) this.activateAndDeactivateMusicPlayed = false;
 			super.font.draw(super.batch, "Deactivate music game", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/3.1304f);
 		}else if(this.gameButtonPressed == true) {
-			this.buttonsStage.getRoot().removeActor(this.chooseEnglishButton);
-			this.buttonsStage.getRoot().removeActor(this.chooseSpanishButton);
+			this.buttonsStage.getRoot().removeActor(this.showMonitorsButton);
 			this.buttonsStage.getRoot().removeActor(this.chooseFullScreenButton);
 			this.buttonsStage.getRoot().removeActor(this.chooseWindowedFullScreenButton);
-			
-			super.batch.draw(World.pressedButton, this.gameButton.getX(), this.gameButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
-
-			super.batch.draw(this.checkBox, this.lifeMonstersBarButton.getX(), this.lifeMonstersBarButton.getY(), this.lifeMonstersBarButton.getWidth(), this.lifeMonstersBarButton.getHeight());
-			if(this.lifeMonstersBarButton.isPressed()) {
-				if(this.lifeMonstersBarButtonPressedOneTime == true) this.lifeMonstersBarButtonPressed = false;
-				else this.lifeMonstersBarButtonPressed = true;
-			}else if(!this.lifeMonstersBarButton.isPressed()) {
-				if(this.lifeMonstersBarButtonPressed == true) this.lifeMonstersBarButtonPressedOneTime = true;
-				else this.lifeMonstersBarButtonPressedOneTime = false;
-			}
-			if(lifeMonstersBarButtonPressed == true) super.batch.draw(this.checkedBox, this.lifeMonstersBarButton.getX(), this.lifeMonstersBarButton.getY(), this.lifeMonstersBarButton.getWidth()+4, this.lifeMonstersBarButton.getHeight());
-			if(this.lifeMonstersBarButton.isPressed() && this.lifeMonstersBarButtonPlayed == false) {
-				World.clickSound.play();
-				this.lifeMonstersBarButtonPlayed = true;
-			}else if(!this.lifeMonstersBarButton.isPressed()) this.lifeMonstersBarButtonPlayed = false;
-			super.font.draw(super.batch, "Show monsters life bar", 750, 865);
-
-			super.batch.draw(this.checkBox, this.damageQuantityButton.getX(), this.damageQuantityButton.getY(), this.damageQuantityButton.getWidth(), this.damageQuantityButton.getHeight());
-			if(this.damageQuantityButton.isPressed()) {
-				if(this.damageQuantityButtonPressedOneTime == true) this.damageQuantityButtonPressed = false;
-				else this.damageQuantityButtonPressed = true;
-			}else if(!this.damageQuantityButton.isPressed()) {
-				if(this.damageQuantityButtonPressed == true) this.damageQuantityButtonPressedOneTime = true;
-				else this.damageQuantityButtonPressedOneTime = false;
-			}
-			if(damageQuantityButtonPressed == true) super.batch.draw(this.checkedBox, this.damageQuantityButton.getX(), this.damageQuantityButton.getY(), this.damageQuantityButton.getWidth()+4, this.damageQuantityButton.getHeight());
-			if(this.damageQuantityButton.isPressed() && this.damageQuantityButtonPlayed == false) {
-				World.clickSound.play();
-				this.damageQuantityButtonPlayed = true;
-			}else if(!this.damageQuantityButton.isPressed()) this.damageQuantityButtonPlayed = false;
-			super.font.draw(super.batch, "Show  damage deal to enemies", 750, 785);
-
-			super.batch.draw(this.checkBox, this.healingQuantityButton.getX(), this.healingQuantityButton.getY(), this.healingQuantityButton.getWidth(), this.healingQuantityButton.getHeight());
-			if(this.healingQuantityButton.isPressed()) {
-				if(this.healingQuantityButtonPressedOneTime == true) this.healingQuantityButtonPressed = false;
-				else this.healingQuantityButtonPressed = true;
-			}else if(!this.healingQuantityButton.isPressed()) {
-				if(this.healingQuantityButtonPressed == true) this.healingQuantityButtonPressedOneTime = true;
-				else this.healingQuantityButtonPressedOneTime = false;
-			}
-			if(healingQuantityButtonPressed == true) super.batch.draw(this.checkedBox, this.healingQuantityButton.getX(), this.healingQuantityButton.getY(), this.healingQuantityButton.getWidth()+4, this.healingQuantityButton.getHeight());
-			if(this.healingQuantityButton.isPressed() && this.healingQuantityButtonPlayed == false) {
-				World.clickSound.play();
-				this.healingQuantityButtonPlayed = true;
-			}else if(!this.healingQuantityButton.isPressed()) this.healingQuantityButtonPlayed = false;
-			super.font.draw(super.batch, "Show healing", 750, 705);
-
-			super.batch.draw(this.checkBox, this.defensiveMessagesButton.getX(), this.defensiveMessagesButton.getY(), this.defensiveMessagesButton.getWidth(), this.defensiveMessagesButton.getHeight());
-			if(this.defensiveMessagesButton.isPressed()) {
-				if(this.defensiveMessagesButtonPressedOneTime == true) this.defensiveMessagesButtonPressed = false;
-				else this.defensiveMessagesButtonPressed = true;
-			}else if(!this.defensiveMessagesButton.isPressed()) {
-				if(this.defensiveMessagesButtonPressed == true) this.defensiveMessagesButtonPressedOneTime = true;
-				else this.defensiveMessagesButtonPressedOneTime = false;
-			}
-			if(defensiveMessagesButtonPressed == true) super.batch.draw(this.checkedBox, this.defensiveMessagesButton.getX(), this.defensiveMessagesButton.getY(), this.defensiveMessagesButton.getWidth()+4, this.defensiveMessagesButton.getHeight());
-			if(this.defensiveMessagesButton.isPressed() && this.defensiveMessagesButtonPlayed == false) {
-				World.clickSound.play();
-				this.defensiveMessagesButtonPlayed = true;
-			}else if(!this.defensiveMessagesButton.isPressed()) this.defensiveMessagesButtonPlayed = false;
-			super.font.draw(super.batch, "Show defensive messages", 750, 625);
-
-			super.batch.draw(this.checkBox, this.hourButton.getX(), this.hourButton.getY(), this.hourButton.getWidth(), this.hourButton.getHeight());
-			if(this.hourButton.isPressed()) {
-				if(this.hourButtonPressedOneTime == true) this.hourButtonPressed = false;
-				else this.hourButtonPressed = true;
-			}else if(!this.hourButton.isPressed()) {
-				if(this.hourButtonPressed == true) this.hourButtonPressedOneTime = true;
-				else this.hourButtonPressedOneTime = false;
-			}
-			if(hourButtonPressed == true) super.batch.draw(this.checkedBox, this.hourButton.getX(), this.hourButton.getY(), this.hourButton.getWidth()+4, this.hourButton.getHeight());
-			if(this.hourButton.isPressed() && this.hourButtonPlayed == false) {
-				World.clickSound.play();
-				this.hourButtonPlayed = true;
-			}else if(!this.hourButton.isPressed()) this.hourButtonPlayed = false;
-			super.font.draw(super.batch, "Show hour", 750, 545);
-			
-			super.batch.draw(this.checkBox, this.showStatsButton.getX(), this.showStatsButton.getY(), this.showStatsButton.getWidth(), this.showStatsButton.getHeight());
-			if(this.showStatsButton.isPressed()) {
-				if(this.showStatsButtonPressedOneTime == true) this.showStatsButtonPressed = false;
-				else this.showStatsButtonPressed = true;
-			}else if(!this.showStatsButton.isPressed()) {
-				if(this.showStatsButtonPressed == true) this.showStatsButtonPressedOneTime = true;
-				else this.showStatsButtonPressedOneTime = false;
-			}
-			if(showStatsButtonPressed == true) super.batch.draw(this.checkedBox, this.showStatsButton.getX(), this.showStatsButton.getY(), this.showStatsButton.getWidth()+4, this.showStatsButton.getHeight());
-			if(this.showStatsButton.isPressed() && this.showStatsButtonPlayed == false) {
-				World.clickSound.play();
-				this.showStatsButtonPlayed = true;
-			}else if(!this.showStatsButton.isPressed()) this.showStatsButtonPlayed = false;
-			super.font.draw(super.batch, "Show player stats", 750, 465);
-		}else if(this.languageButtonPressed == true) {
 			this.buttonsGroup.addActor(this.showLanguagesButton);
 			this.buttonsGroup.addActor(this.chooseEnglishButton);
 			this.buttonsGroup.addActor(this.chooseSpanishButton);
-			super.batch.draw(World.pressedButton, this.languageButton.getX(), this.languageButton.getY(), this.languageButton.getWidth(), this.languageButton.getHeight());
-			super.font.draw(super.batch, "Language selection", 710, 880);
-			super.batch.draw(World.leftLittleFrame, 710, 790, 5, 60);
-			super.batch.draw(World.bottomLittleFrame, 710, 790, 300, 5);
-			super.batch.draw(World.topLittleFrame, 710, 845, 300, 5);
-			super.batch.draw(World.rightLittleFrame, 1010, 790, 5, 60);
-			super.batch.draw(World.topLeftLittleFrame, 710, 830, 20, 20);
-			super.batch.draw(World.topRightLittleFrame, 995, 830, 20, 20);
-			super.batch.draw(World.bottomLeftLittleFrame, 710, 790, 20, 20);
-			super.batch.draw(World.bottomRightLittleFrame, 995, 790, 20, 20);
-			super.batch.draw(World.backFrame, 715, 795, 295, 50);
+			
+			super.batch.draw(World.pressedButton, this.gameButton.getX(), this.gameButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
+			super.font.draw(super.batch, "Language selection", Gdx.graphics.getWidth()/2.7042f, 880);
+			super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
+			super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+			super.batch.draw(World.topLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2781f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+			super.batch.draw(World.rightLittleFrame, Gdx.graphics.getWidth()/1.9009f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
+			super.batch.draw(World.topLeftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.3012f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.topRightLittleFrame, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.3012f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.bottomLeftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.bottomRightLittleFrame, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+			super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/21.6f);
 			if(this.showLanguagesButton.isPressed()) {
 				if(this.showLanguagesButtonPressedOneTime == true) this.showLanguagesButtonPressed = false;
 				else this.showLanguagesButtonPressed = true;
@@ -923,19 +764,19 @@ public class OptionsMenuScreen extends AbstractScreen{
 				else this.showLanguagesButtonPressedOneTime = false;
 			}
 			if((this.showLanguagesButtonPressed == true && this.showLanguagesButtonPressedOneTime == true) || (this.showLanguagesButtonPressed == false && this.showLanguagesButtonPressedOneTime == true)) {
-				super.batch.draw(World.leftLittleFrame, 710, 670, 5, 120);
-				super.batch.draw(World.bottomLittleFrame, 710, 670, 300, 5);
-				super.batch.draw(World.rightLittleFrame, 1010, 670, 5, 120);
-				super.batch.draw(World.bottomLittleFrame, 710, 730, 300, 5);
-				super.batch.draw(this.leftLittleConection, 710, 775, 20, 35);
-				super.batch.draw(this.leftLittleConection, 710, 715, 20, 35);
-				super.batch.draw(this.rightLittleConection, 995, 775, 20, 35);
-				super.batch.draw(this.rightLittleConection, 995, 715, 20, 35);
-				super.batch.draw(World.bottomLeftLittleFrame, 710, 670, 20, 20);
-				super.batch.draw(World.bottomRightLittleFrame, 995, 670, 20, 20);
-				super.batch.draw(World.backFrame, 715, 795, 295, 50);
-				super.batch.draw(World.backFrame, 715, 735, 295, 55);
-				super.batch.draw(World.backFrame, 715, 675, 295, 55);
+				super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/9.0f);
+				super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+				super.batch.draw(World.rightLittleFrame, Gdx.graphics.getWidth()/1.9009f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/9.0f);
+				super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.47945f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
+				super.batch.draw(this.leftLittleConection, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.39354f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(this.leftLittleConection, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.51048f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(this.rightLittleConection, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.39354f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(this.rightLittleConection, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.51048f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/30.85f);
+				super.batch.draw(World.bottomLeftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+				super.batch.draw(World.bottomRightLittleFrame, Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.61194f, Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f);
+				super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/21.6f);
+				super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.46938f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
+				super.batch.draw(World.backFrame, Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
 				if(this.chooseEnglishButton.isOver()) {
 					this.chooseSpanishButtonPlayed = false;
 					super.batch.draw(World.secondBackFrame, this.chooseEnglishButton.getX(), this.chooseEnglishButton.getY(), this.chooseEnglishButton.getWidth(), this.chooseEnglishButton.getHeight());
@@ -966,24 +807,24 @@ public class OptionsMenuScreen extends AbstractScreen{
 				}
 				if(this.chooseEnglishButtonPressed == true) super.batch.draw(World.secondBackFrame, this.chooseEnglishButton.getX(), this.chooseEnglishButton.getY(), this.chooseEnglishButton.getWidth(), this.chooseEnglishButton.getHeight());
 				else if(this.chooseSpanishButtonPressed == true) super.batch.draw(World.secondBackFrame, this.chooseSpanishButton.getX(), this.chooseSpanishButton.getY(), this.chooseSpanishButton.getWidth(), this.chooseSpanishButton.getHeight());
-				super.font.draw(super.batch, "English", 720, 770);
-				super.font.draw(super.batch, "Spanish(Spain)", 720, 710);
+				super.font.draw(super.batch, "English", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.40259f);
+				super.font.draw(super.batch, "Spanish(Spain)", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.52112f);
 			}
-			super.batch.draw(this.smallTextBoxBorderless, 960, 795, 50, 50);
+			super.batch.draw(this.smallTextBoxBorderless, Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
 			if(this.showLanguagesButtonPressed == false && this.showLanguagesButtonPressedOneTime == false) {
-				super.batch.draw(this.downButton, this.showLanguagesButton.getX()+10, this.showLanguagesButton.getY()+10, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
+				super.batch.draw(this.downButton, this.showLanguagesButton.getX()+Gdx.graphics.getWidth()/192f, this.showLanguagesButton.getY()+Gdx.graphics.getHeight()/108f, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
 			}else if(this.showLanguagesButtonPressed == true && this.showLanguagesButtonPressedOneTime == false) {
-				super.batch.draw(this.pressedDownButton, this.showLanguagesButton.getX()+10, this.showLanguagesButton.getY()+10, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
+				super.batch.draw(this.pressedDownButton, this.showLanguagesButton.getX()+Gdx.graphics.getWidth()/192f, this.showLanguagesButton.getY()+Gdx.graphics.getHeight()/108f, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
 			}else if(this.showLanguagesButtonPressed == true && this.showLanguagesButtonPressedOneTime == true) {
-				super.batch.draw(this.upButton, this.showLanguagesButton.getX()+10, this.showLanguagesButton.getY()+10, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
+				super.batch.draw(this.upButton, this.showLanguagesButton.getX()+Gdx.graphics.getWidth()/192f, this.showLanguagesButton.getY()+Gdx.graphics.getHeight()/108f, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
 			}else if(this.showLanguagesButtonPressed == false && this.showLanguagesButtonPressedOneTime == true) {
-				super.batch.draw(this.pressedUpButton, this.showLanguagesButton.getX()+10, this.showLanguagesButton.getY()+10, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
+				super.batch.draw(this.pressedUpButton, this.showLanguagesButton.getX()+Gdx.graphics.getWidth()/192f, this.showLanguagesButton.getY()+Gdx.graphics.getHeight()/108f, this.showLanguagesButton.getWidth()/1.5f, this.showLanguagesButton.getHeight()/1.5f);
 			}
 			if(this.showLanguagesButton.isPressed() && this.showLanguagesButtonPlayed == false) {
 				World.clickSound.play();
 				this.showLanguagesButtonPlayed = true;
 			}else if(!this.showLanguagesButton.isPressed()) this.showLanguagesButtonPlayed = false;
-			super.font.draw(super.batch, this.choosedLanguage, 720, 830);
+			super.font.draw(super.batch, this.choosedLanguage, Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.3012f);
 		}else if(this.shortCutButtonPressed == true) {
 			super.batch.draw(World.pressedButton, this.shortCutButton.getX(), this.shortCutButton.getY(), this.shortCutButton.getWidth(), this.shortCutButton.getHeight());
 			
@@ -998,19 +839,19 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.batch.draw(World.bottomLittleFrame, 730, 730, 750, 3);
 			this.fontForShortCuts.draw(super.batch, "MOVES", 750, 710);
 			super.batch.draw(World.bottomLittleFrame, 730, 675, 750, 3);
-			this.fontForShortCutsNames.draw(super.batch, "Top movement", 750, 650);
+			this.fontForShortCutsNames.draw(super.batch, "Up", 750, 650);
 			super.batch.draw(World.darkButton, 1180, 620, 300, 50);
 			this.fontForShortCutsNames.draw(super.batch, "Up arrow", 1295, 653);
 			super.batch.draw(World.bottomLittleFrame, 730, 610, 750, 3);
-			this.fontForShortCutsNames.draw(super.batch, "Right movement", 750, 585);
+			this.fontForShortCutsNames.draw(super.batch, "Right", 750, 585);
 			super.batch.draw(World.darkButton, 1180, 555, 300, 50);
 			this.fontForShortCutsNames.draw(super.batch, "Right arrow", 1287, 585);
 			super.batch.draw(World.bottomLittleFrame, 730, 545, 750, 3);
-			this.fontForShortCutsNames.draw(super.batch, "Bottom movement", 750, 520);
+			this.fontForShortCutsNames.draw(super.batch, "Down", 750, 520);
 			super.batch.draw(World.darkButton, 1180, 490, 300, 50);
 			this.fontForShortCutsNames.draw(super.batch, "Down arrow", 1285, 520);
 			super.batch.draw(World.bottomLittleFrame, 730, 480, 750, 3);
-			this.fontForShortCutsNames.draw(super.batch, "Left movement", 750, 455);
+			this.fontForShortCutsNames.draw(super.batch, "Left", 750, 455);
 			super.batch.draw(World.darkButton, 1180, 425, 300, 50);
 			this.fontForShortCutsNames.draw(super.batch, "Left arrow", 1295, 455);
 			super.batch.draw(World.bottomLittleFrame, 730, 415, 750, 3);
@@ -1036,8 +877,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 		super.font.draw(super.batch, "VIDEO", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.24137f);
 		super.font.draw(super.batch, "VOLUME", Gdx.graphics.getWidth()/4.5714f, Gdx.graphics.getHeight()/1.36708f);
 		super.font.draw(super.batch, "GAME", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.52112f);
-		super.font.draw(super.batch, "LANGUAGE", Gdx.graphics.getWidth()/4.6829f, Gdx.graphics.getHeight()/1.71428f);
-		super.font.draw(super.batch, "SHORTCUTS", Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/1.96363f);
+		super.font.draw(super.batch, "SHORTCUTS", 285, 450);
 		super.font.draw(super.batch, "INITIAL CONFIGURATION", Gdx.graphics.getWidth()/5.7313f, Gdx.graphics.getHeight()/5.1428f);
 		super.font.draw(super.batch, "CANCEL", Gdx.graphics.getWidth()/2.31325f, Gdx.graphics.getHeight()/5.1428f);
 		super.font.draw(super.batch, "APPLY", Gdx.graphics.getWidth()/1.6842f, Gdx.graphics.getHeight()/5.1428f);
