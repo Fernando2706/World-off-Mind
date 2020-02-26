@@ -11,14 +11,17 @@ public class World extends Game{
 	
 	public static Sound clickSound;
 	private Cursor cursor;
-	public static AbstractScreen MainMenuScreen, OptionsMenuScreen;
-	public static Texture mainPicture, darkButton, lightButton, titleButton, pressedButton;
+	public static AbstractScreen MainMenuScreen, OptionsMenuScreen, StartGameScreen;
+	public static Texture mainPicture, darkButton, lightButton, titleButton, pressedButton, topframe, rightFrame, bottomFrame, leftFrame, topLeftFrame, topRightFrame, bottomLeftFrame, bottomRightFrame,
+						  topConection, rightConection, bottomConection, leftConection, backFrame, secondBackFrame, topLittleFrame, topLeftLittleFrame, leftLittleFrame, bottomLeftLittleFrame, bottomLittleFrame,
+						  bottomRightLittleFrame, rightLittleFrame, topRightLittleFrame, leftMarker, rightMarker, thirdBackFrame;
 	
 	@Override
 	public void create () {
 		
 		MainMenuScreen = new MainMenuScreen();
 		OptionsMenuScreen = new OptionsMenuScreen();
+		StartGameScreen = new StartGameScreen();
 		
 		// Cursor
 		this.cursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("WorldTextures/dwarven_gauntlet.png")), 0, 0);
@@ -33,9 +36,42 @@ public class World extends Game{
 		lightButton = new Texture(Gdx.files.internal("WorldTextures/lightButton.png"));
 		titleButton = new Texture(Gdx.files.internal("WorldTextures/titleButton.png"));
 		pressedButton = new Texture(Gdx.files.internal("WorldTextures/pressedButton.png"));
+		topframe = new Texture(Gdx.files.internal("WorldTextures/topFrame.png"));
+		rightFrame = new Texture(Gdx.files.internal("WorldTextures/rightFrame.png"));
+		bottomFrame = new Texture(Gdx.files.internal("WorldTextures/bottomFrame.png"));
+		leftFrame = new Texture(Gdx.files.internal("WorldTextures/leftFrame.png"));
+		topLeftFrame = new Texture(Gdx.files.internal("WorldTextures/topLeftFrame.png"));
+		topRightFrame = new Texture(Gdx.files.internal("WorldTextures/topRightFrame.png"));
+		bottomLeftFrame = new Texture(Gdx.files.internal("WorldTextures/bottomLeftFrame.png"));
+		bottomRightFrame = new Texture(Gdx.files.internal("WorldTextures/bottomRightFrame.png"));
+		topConection = new Texture(Gdx.files.internal("WorldTextures/topConection.png"));
+		rightConection = new Texture(Gdx.files.internal("WorldTextures/rightConection.png"));
+		bottomConection = new Texture(Gdx.files.internal("WorldTextures/bottomConection.png"));
+		leftConection = new Texture(Gdx.files.internal("WorldTextures/leftConection.png"));
+		backFrame = new Texture(Gdx.files.internal("WorldTextures/backFrame.png"));
+		secondBackFrame = new Texture(Gdx.files.internal("WorldTextures/secondBackFrame.png"));
+		topLittleFrame = new Texture(Gdx.files.internal("WorldTextures/topLittleFrame.png"));
+		topLeftLittleFrame = new Texture(Gdx.files.internal("WorldTextures/topLeftLittleFrame.png"));
+		leftLittleFrame = new Texture(Gdx.files.internal("WorldTextures/leftLittleFrame.png"));
+		bottomLeftLittleFrame = new Texture(Gdx.files.internal("WorldTextures/bottomLeftLittleFrame.png"));
+		bottomLittleFrame = new Texture(Gdx.files.internal("WorldTextures/bottomLittleFrame.png"));
+		bottomRightLittleFrame = new Texture(Gdx.files.internal("WorldTextures/bottomRightLittleFrame.png"));
+		rightLittleFrame = new Texture(Gdx.files.internal("WorldTextures/rightLittleFrame.png"));
+		topRightLittleFrame = new Texture(Gdx.files.internal("WorldTextures/topRightLittleFrame.png"));
+		leftMarker = new Texture(Gdx.files.internal("WorldTextures/leftMarker.png"));
+		rightMarker = new Texture(Gdx.files.internal("WorldTextures/rightMarker.png"));
+		thirdBackFrame = new Texture(Gdx.files.internal("WorldTextures/thirdBackFrame.png"));
 		
 		ScreenManager.getInstance().initialize(this);
 		ScreenManager.getInstance().showScreen(MainMenuScreen);
+	}
+	
+	public static void setVSync(boolean VSync) {
+		Gdx.graphics.setVSync(VSync);
+	}
+	
+	public static void setCursorCatched(boolean cursorCatched) {
+		Gdx.input.setCursorCatched(cursorCatched);
 	}
 
 	@Override
