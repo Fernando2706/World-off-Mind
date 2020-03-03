@@ -1,5 +1,6 @@
 package com.worldoffmind.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -18,7 +19,7 @@ public abstract class AbstractScreen implements Screen{
 		this.font = new BitmapFont();
 		this.camera = new OrthographicCamera();
 		
-		this.viewport = new ExtendViewport(1920, 1080, this.camera);
+		this.viewport = new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), this.camera);
 	}
 
 	// Subclasses must load actors in this method

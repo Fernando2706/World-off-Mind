@@ -44,11 +44,11 @@ public class OptionsMenuScreen extends AbstractScreen{
 		
 		this.fontForShortCuts = new BitmapFont();
 		this.fontForShortCuts.setColor(Color.WHITE);
-		this.fontForShortCuts.getData().setScale(1.3f, 1.3f);
+		this.fontForShortCuts.getData().setScale(Gdx.graphics.getWidth()/1476.9230f, Gdx.graphics.getHeight()/830.7692f);
 		
 		this.fontForShortCutsNames = new BitmapFont();
 		this.fontForShortCutsNames.setColor(Color.GOLDENROD);
-		this.fontForShortCutsNames.getData().setScale(1.1f, 1.1f);
+		this.fontForShortCutsNames.getData().setScale(Gdx.graphics.getWidth()/1745.4545f, Gdx.graphics.getHeight()/981.8181f);
 
 		this.checkBox = new Texture(Gdx.files.internal("OptionsMenuTextures/checkButton.png"));
 		this.checkedBox = new Texture(Gdx.files.internal("OptionsMenuTextures/checkedButton.png"));
@@ -151,7 +151,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.videoButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.317f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.audioButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.4594f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.gameButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.6362f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
-		this.shortCutButton.setBounds(290, 580, 350, 80);
+		this.shortCutButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/1.8620f, Gdx.graphics.getWidth()/5.4857f, Gdx.graphics.getHeight()/13.5f);
 		this.initialConfigurationButton.setBounds(Gdx.graphics.getWidth()/6.6206f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.cancelButton.setBounds(Gdx.graphics.getWidth()/2.6666f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/13.5f);
 		this.applyButton.setBounds(Gdx.graphics.getWidth()/1.873f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/13.5f);
@@ -168,11 +168,11 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.showMonitorsButton.setBounds(Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
 		this.chooseFullScreenButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.46938f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
 		this.chooseWindowedFullScreenButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
-		scrollFPSButton.setBounds(847, 425, 25, 40);
-		scrollMasterAudioButton.setBounds(847, 785, 25, 40);
-		scrollEffectsAudioButton.setBounds(847, 675, 25, 40);
-		scrollEnvironmentalAudioButton.setBounds(847, 565, 25, 40);
-		scrollMusicAudioButton.setBounds(847, 455, 25, 40);
+		scrollFPSButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/2.5411f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
+		scrollMasterAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/1.3757f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
+		scrollEffectsAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
+		scrollEnvironmentalAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/1.9115f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
+		scrollMusicAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/2.3736f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
 
 		this.buttonsGroup.addActor(this.videoButton);
 		this.buttonsGroup.addActor(this.audioButton);
@@ -470,7 +470,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 				if(VSyncButtonPressed == true) this.VSyncButtonPressedOneTime = true;
 				else this.VSyncButtonPressedOneTime = false;
 			}
-			if(VSyncButtonPressed == true) super.batch.draw(this.checkedBox, this.VSyncButton.getX(), this.VSyncButton.getY(), this.VSyncButton.getWidth()+4, this.VSyncButton.getHeight());
+			if(VSyncButtonPressed == true) super.batch.draw(this.checkedBox, this.VSyncButton.getX(), this.VSyncButton.getY(), this.VSyncButton.getWidth()+(Gdx.graphics.getWidth()/480f), this.VSyncButton.getHeight());
 			if(this.VSyncButton.isPressed() && this.VSyncButtonPlayed == false) {
 				World.clickSound.play();
 				this.VSyncButtonPlayed = true;
@@ -485,7 +485,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 				if(this.biggerCursorButtonPressed == true) this.biggerCursorButtonPressedOneTime = true;
 				else this.biggerCursorButtonPressedOneTime = false;
 			}
-			if(this.biggerCursorButtonPressed == true) super.batch.draw(this.checkedBox, this.biggerCursorButton.getX(), this.biggerCursorButton.getY(), this.biggerCursorButton.getWidth()+4, this.biggerCursorButton.getHeight());
+			if(this.biggerCursorButtonPressed == true) super.batch.draw(this.checkedBox, this.biggerCursorButton.getX(), this.biggerCursorButton.getY(), this.biggerCursorButton.getWidth()+(Gdx.graphics.getWidth()/480f), this.biggerCursorButton.getHeight());
 			if(this.biggerCursorButton.isPressed() && this.biggerCursorButtonPlayed == false) {
 				World.clickSound.play();
 				this.biggerCursorButtonPlayed = true;
@@ -493,11 +493,11 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.font.draw(super.batch, "Bigger cursor", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/1.8461f);
 
 			super.font.draw(super.batch, "Max FPS:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.1176f);
-			if(scrollFPSButton.getX() >= 995) scrollFPSButton.setPosition(995, 425);
-			if(scrollFPSButton.getX() <= 700) scrollFPSButton.setPosition(700, 425);
-			super.batch.draw(this.scrollBar, 710, 440, 300, 10);
+			if(scrollFPSButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollFPSButton.setPosition(Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/2.5411f);
+			if(scrollFPSButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollFPSButton.setPosition(Gdx.graphics.getWidth()/2.7428f, Gdx.graphics.getHeight()/2.5411f);
+			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.4545f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollFPSButton.getX(), scrollFPSButton.getY(), scrollFPSButton.getWidth(), scrollFPSButton.getHeight());
-			this.floatFPS = ((scrollFPSButton.getX() - 698) * 120f) / 296f;
+			this.floatFPS = ((scrollFPSButton.getX() - (Gdx.graphics.getWidth()/2.7507f)) * 120f) / 296f;
 			super.font.draw(super.batch, String.valueOf(Math.round(this.floatFPS)), Gdx.graphics.getWidth()/2.3703f, Gdx.graphics.getHeight()/2.1259f);
 		}else if(this.audioButtonPressed == true) {
 			this.buttonsStage.getRoot().removeActor(this.showLanguagesButton);
@@ -506,35 +506,35 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.batch.draw(World.pressedButton, this.audioButton.getX(), this.audioButton.getY(), this.audioButton.getWidth(), this.audioButton.getHeight());
 			
 			super.font.draw(super.batch, "Master audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2413f);
-			if(scrollMasterAudioButton.getX() >= 995) scrollMasterAudioButton.setPosition(995, 785);
-			if(scrollMasterAudioButton.getX() <= 700) scrollMasterAudioButton.setPosition(700, 785);
-			super.batch.draw(this.scrollBar, 710, 800, 300, 10);
+			if(scrollMasterAudioButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollMasterAudioButton.setPosition(Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.3757f);
+			if(scrollMasterAudioButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollMasterAudioButton.setPosition(Gdx.graphics.getWidth()/2.7428f, Gdx.graphics.getHeight()/1.3757f);
+			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.35f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollMasterAudioButton.getX(), scrollMasterAudioButton.getY(), scrollMasterAudioButton.getWidth(), scrollMasterAudioButton.getHeight());
-			this.floatMasterVolume = ((scrollMasterAudioButton.getX() - 700) * 100f) / 296f;
+			this.floatMasterVolume = ((scrollMasterAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
 			super.font.draw(super.batch, String.valueOf(Math.round(this.floatMasterVolume)), Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/1.2442f);
 
 			super.font.draw(super.batch, "Effects audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.421f);
-			if(scrollEffectsAudioButton.getX() >= 995) scrollEffectsAudioButton.setPosition(995, 675);
-			if(scrollEffectsAudioButton.getX() <= 700) scrollEffectsAudioButton.setPosition(700, 675);
-			super.batch.draw(this.scrollBar, 710, 690, 300, 10);
+			if(scrollEffectsAudioButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollEffectsAudioButton.setPosition(Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.6f);
+			if(scrollEffectsAudioButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollEffectsAudioButton.setPosition(Gdx.graphics.getWidth()/2.7428f, Gdx.graphics.getHeight()/1.6f);
+			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.5652f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollEffectsAudioButton.getX(), scrollEffectsAudioButton.getY(), scrollEffectsAudioButton.getWidth(), scrollEffectsAudioButton.getHeight());
-			this.floatEffectsVolume = ((scrollEffectsAudioButton.getX() - 700) * 100f) / 296f;
+			this.floatEffectsVolume = ((scrollEffectsAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
 			super.font.draw(super.batch, String.valueOf(Math.round(this.floatEffectsVolume)), Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/1.4248f);
 			
 			super.font.draw(super.batch, "Environmental audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.6615f);
-			if(scrollEnvironmentalAudioButton.getX() >= 995) scrollEnvironmentalAudioButton.setPosition(995, 565);
-			if(scrollEnvironmentalAudioButton.getX() <= 700) scrollEnvironmentalAudioButton.setPosition(700, 565);
-			super.batch.draw(this.scrollBar, 710, 580, 300, 10);
+			if(scrollEnvironmentalAudioButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollEnvironmentalAudioButton.setPosition(Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/1.9115f);
+			if(scrollEnvironmentalAudioButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollEnvironmentalAudioButton.setPosition(Gdx.graphics.getWidth()/2.7428f, Gdx.graphics.getHeight()/1.9115f);
+			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.8620f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollEnvironmentalAudioButton.getX(), scrollEnvironmentalAudioButton.getY(), scrollEnvironmentalAudioButton.getWidth(), scrollEnvironmentalAudioButton.getHeight());
-			this.floatEnvironmentalVolume = ((scrollEnvironmentalAudioButton.getX() - 700) * 100f) / 296f;
+			this.floatEnvironmentalVolume = ((scrollEnvironmentalAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
 			super.font.draw(super.batch, String.valueOf(Math.round(this.floatEnvironmentalVolume)), Gdx.graphics.getWidth()/2.0645f, Gdx.graphics.getHeight()/1.6666f);
 
 			super.font.draw(super.batch, "Music audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2f);
-			if(scrollMusicAudioButton.getX() >= 995) scrollMusicAudioButton.setPosition(995, 455);
-			if(scrollMusicAudioButton.getX() <= 700) scrollMusicAudioButton.setPosition(700, 455);
-			super.batch.draw(this.scrollBar, 710, 470, 300, 10);
+			if(scrollMusicAudioButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollMusicAudioButton.setPosition(Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/2.3736f);
+			if(scrollMusicAudioButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollMusicAudioButton.setPosition(Gdx.graphics.getWidth()/2.7428f, Gdx.graphics.getHeight()/2.3736f);
+			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.2978f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollMusicAudioButton.getX(), scrollMusicAudioButton.getY(), scrollMusicAudioButton.getWidth(), scrollMusicAudioButton.getHeight());
-			this.floatMusicVolume = ((scrollMusicAudioButton.getX() - 700) * 100f) / 296f;
+			this.floatMusicVolume = ((scrollMusicAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
 			super.font.draw(super.batch, String.valueOf(Math.round(this.floatMusicVolume)), Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/2.0074f);
 
 			super.batch.draw(this.checkBox, this.activateAndDeactivateAllSounds.getX(), this.activateAndDeactivateAllSounds.getY(), this.activateAndDeactivateAllSounds.getWidth(), this.activateAndDeactivateAllSounds.getHeight());
@@ -575,7 +575,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 			this.buttonsGroup.addActor(this.chooseSpanishButton);
 			
 			super.batch.draw(World.pressedButton, this.gameButton.getX(), this.gameButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
-			super.font.draw(super.batch, "Language selection", Gdx.graphics.getWidth()/2.7042f, 880);
+			super.font.draw(super.batch, "Language selection", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2272f);
 			super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
 			super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
 			super.batch.draw(World.topLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2781f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
@@ -704,9 +704,9 @@ public class OptionsMenuScreen extends AbstractScreen{
 		}
 
 		super.font.draw(super.batch, "VIDEO", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.24137f);
-		super.font.draw(super.batch, "AUDIO", 435, Gdx.graphics.getHeight()/1.36708f);
+		super.font.draw(super.batch, "AUDIO", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.36708f);
 		super.font.draw(super.batch, "GAME", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.52112f);
-		super.font.draw(super.batch, "SHORTCUTS", 400, 630);
+		super.font.draw(super.batch, "SHORTCUTS", Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/1.7142f);
 		super.font.draw(super.batch, "INITIAL CONFIGURATION", Gdx.graphics.getWidth()/5.7313f, Gdx.graphics.getHeight()/5.1428f);
 		super.font.draw(super.batch, "CANCEL", Gdx.graphics.getWidth()/2.31325f, Gdx.graphics.getHeight()/5.1428f);
 		super.font.draw(super.batch, "APPLY", Gdx.graphics.getWidth()/1.6842f, Gdx.graphics.getHeight()/5.1428f);

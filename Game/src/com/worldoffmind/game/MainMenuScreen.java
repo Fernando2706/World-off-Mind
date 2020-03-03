@@ -62,7 +62,7 @@ public class MainMenuScreen extends AbstractScreen {
 		this.achievementsButton = new Button();
 		this.exitButton = new Button();
 
-		this.startGameButton.setBounds(730, 560, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
+		this.startGameButton.setBounds(Gdx.graphics.getWidth()/2.6301f, Gdx.graphics.getHeight()/1.9285f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
 		this.optionsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/2.602f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
 		this.achievementsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/3.927f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
 		this.exitButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/8.0f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
@@ -97,8 +97,8 @@ public class MainMenuScreen extends AbstractScreen {
 				this.playedStartGameButton = true;
 				World.clickSound.play();
 			}
-			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, 540, Gdx.graphics.getWidth()/21.57f, Gdx.graphics.getHeight()/7.2f);
-			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, 540, Gdx.graphics.getWidth()/21.57f, Gdx.graphics.getHeight()/7.2f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/2.9767f, Gdx.graphics.getHeight()/2f, Gdx.graphics.getWidth()/21.57f, Gdx.graphics.getHeight()/7.2f);
+			super.batch.draw(this.torch, Gdx.graphics.getWidth()/1.665f, Gdx.graphics.getHeight()/2f, Gdx.graphics.getWidth()/21.57f, Gdx.graphics.getHeight()/7.2f);
 			super.batch.draw(World.lightButton, this.startGameButton.getX(), this.startGameButton.getY(), this.startGameButton.getWidth(), this.startGameButton.getHeight());
 		}else if(this.optionsButton.isOver()) {
 			if(this.playedOptionsButton == false) {
@@ -139,9 +139,9 @@ public class MainMenuScreen extends AbstractScreen {
 			this.exit();
 		}
 		
-		super.font.draw(super.batch, "START GAME", 870, 610);
+		super.font.draw(super.batch, "START GAME", Gdx.graphics.getWidth()/2.2068f, Gdx.graphics.getHeight()/1.7704f);
 		super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/2.3225f);
-		super.font.draw(super.batch, "ACHIEVEMENTS", 860, 325);
+		super.font.draw(super.batch, "ACHIEVEMENTS", Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/3.3230f);
 		super.font.draw(super.batch, "EXIT", Gdx.graphics.getWidth()/2.0869f, Gdx.graphics.getHeight()/5.837f);
 		super.font.draw(super.batch, "Version-Alpha", Gdx.graphics.getWidth()/1.0786f, Gdx.graphics.getHeight()/43.2f);
 		super.batch.end();
