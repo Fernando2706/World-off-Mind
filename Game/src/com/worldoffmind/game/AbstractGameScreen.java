@@ -31,6 +31,10 @@ public abstract class AbstractGameScreen implements Screen{
 	private long lastSpell;
 	public Array<Attack> attacks;
 	private Array<Characters> enemies;
+	public enum ScreenState{
+		PAUSED, RUNNING
+	}
+	public ScreenState screenState;
 	
 	protected AbstractGameScreen() {
 		this.batch = new SpriteBatch();
@@ -47,6 +51,8 @@ public abstract class AbstractGameScreen implements Screen{
 		this.attacks = new Array<Attack>();
 		this.enemies = new Array<Characters>();
 		
+		this.screenState = this.screenState.RUNNING;
+		
 		this.state = "";
 		
 		this.touching = false;
@@ -62,8 +68,8 @@ public abstract class AbstractGameScreen implements Screen{
 	public abstract void render(float delta);
 	
 	public void handleInput(float dt) {
-		if(Gdx.input.isKeyPressed(Keys.ESCAPE)) {
-			this.dispose();
+		if(Gdx.input.isKeyPressed(Keys.ESCAPE)) { 
+			this.screenState = this.screenState.PAUSED;
 		}
 
 		if(Gdx.input.isKeyPressed(Keys.LEFT)) {
@@ -220,7 +226,6 @@ public abstract class AbstractGameScreen implements Screen{
 	
 	@Override
 	public void dispose() {
-		//this.batch.dispose();
-		//this.font.dispose();
+		
 	}
 }

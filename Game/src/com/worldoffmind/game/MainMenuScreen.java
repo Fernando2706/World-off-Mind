@@ -50,18 +50,13 @@ public class MainMenuScreen extends AbstractScreen {
 		
 		this.ButtonStage = new Stage();
 		this.buttonsGroup = new Group();
-	}
-
-	@Override
-	public void buildStage() {
-		Gdx.input.setInputProcessor(this.ButtonStage);
 		
 		// Main menu buttons
 		this.startGameButton = new Button();
 		this.optionsButton = new Button();
 		this.achievementsButton = new Button();
 		this.exitButton = new Button();
-
+		
 		this.startGameButton.setBounds(Gdx.graphics.getWidth()/2.6301f, Gdx.graphics.getHeight()/1.9285f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
 		this.optionsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/2.602f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
 		this.achievementsButton.setBounds(Gdx.graphics.getWidth()/2.62f, Gdx.graphics.getHeight()/3.927f, Gdx.graphics.getWidth()/4.571f, Gdx.graphics.getHeight()/13.5f);
@@ -72,6 +67,12 @@ public class MainMenuScreen extends AbstractScreen {
 		this.buttonsGroup.addActor(this.achievementsButton);
 		this.buttonsGroup.addActor(this.exitButton);
 		this.ButtonStage.setRoot(this.buttonsGroup);
+	}
+
+	@Override
+	public void buildStage() {
+		Gdx.input.setInputProcessor(this.ButtonStage);
+		Gdx.input.setCursorCatched(false);
 	}
 
 	public void render(float delta) {
@@ -139,10 +140,18 @@ public class MainMenuScreen extends AbstractScreen {
 			this.exit();
 		}
 		
-		super.font.draw(super.batch, "START GAME", Gdx.graphics.getWidth()/2.2068f, Gdx.graphics.getHeight()/1.7704f);
-		super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/2.3225f);
-		super.font.draw(super.batch, "ACHIEVEMENTS", Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/3.3230f);
-		super.font.draw(super.batch, "EXIT", Gdx.graphics.getWidth()/2.0869f, Gdx.graphics.getHeight()/5.837f);
+		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "START GAME", Gdx.graphics.getWidth()/2.2068f, Gdx.graphics.getHeight()/1.7704f);
+		else super.font.draw(super.batch, "EMPEZAR PARTIDA", 840, Gdx.graphics.getHeight()/1.7704f);
+		
+		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/2.3225f);
+		else super.font.draw(super.batch, "OPCIONES", 880, Gdx.graphics.getHeight()/2.3225f);
+		
+		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "ACHIEVEMENTS", Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/3.3230f);
+		else super.font.draw(super.batch, "LOGROS", 895, Gdx.graphics.getHeight()/3.3230f);
+		
+		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "EXIT", Gdx.graphics.getWidth()/2.0869f, Gdx.graphics.getHeight()/5.837f);
+		else super.font.draw(super.batch, "SALIR", 910, Gdx.graphics.getHeight()/5.837f);
+		
 		super.font.draw(super.batch, "Version-Alpha", Gdx.graphics.getWidth()/1.0786f, Gdx.graphics.getHeight()/43.2f);
 		super.batch.end();
 

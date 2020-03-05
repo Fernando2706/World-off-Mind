@@ -180,10 +180,6 @@ public class World extends Game{
 	public static void setVSync(boolean VSync) {
 		Gdx.graphics.setVSync(VSync);
 	}
-	
-	public static void setCursorCatched(boolean cursorCatched) {
-		Gdx.input.setCursorCatched(cursorCatched);
-	}
 
 	@Override
 	public void render () {

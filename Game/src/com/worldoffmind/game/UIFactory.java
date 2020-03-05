@@ -38,7 +38,7 @@ public class UIFactory{
 			
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				OptionsMenuScreen.scrollFPSButton.setPosition(Gdx.input.getX(), 425);
+				OptionsMenuScreen.scrollFPSButton.setPosition(Gdx.input.getX(), 475);
 			}
 		};
 	}

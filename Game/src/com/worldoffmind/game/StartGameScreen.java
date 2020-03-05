@@ -78,18 +78,7 @@ public class StartGameScreen extends AbstractScreen{
 
 		this.buttonsGroup = new Group();
 		this.buttonsStage = new Stage();
-	}
-
-	@Override
-	public void buildStage() {
-		this.deleteGame1ButtonPressed = false;
-		this.deleteGame2ButtonPressed = false;
-		this.deleteGame3ButtonPressed = false;
-		this.deleteGame4ButtonPressed = false;
-		this.deleteGame5ButtonPressed = false;
 		
-		Gdx.input.setInputProcessor(this.buttonsStage);
-
 		this.newGame1Button = new Button();
 		this.newGame2Button = new Button();
 		this.newGame3Button = new Button();
@@ -156,6 +145,18 @@ public class StartGameScreen extends AbstractScreen{
 		this.buttonsGroup.addActor(this.askToDeleteGame5YesButton);
 		this.buttonsGroup.addActor(this.askToDeleteGame5NoButton);
 		this.buttonsStage.setRoot(this.buttonsGroup);
+	}
+
+	@Override
+	public void buildStage() {
+		this.deleteGame1ButtonPressed = false;
+		this.deleteGame2ButtonPressed = false;
+		this.deleteGame3ButtonPressed = false;
+		this.deleteGame4ButtonPressed = false;
+		this.deleteGame5ButtonPressed = false;
+		
+		Gdx.input.setInputProcessor(this.buttonsStage);
+		Gdx.input.setCursorCatched(false);
 	}
 
 	@Override
