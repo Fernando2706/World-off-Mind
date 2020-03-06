@@ -150,8 +150,8 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.acceptButton.setBounds(Gdx.graphics.getWidth()/1.4436f, Gdx.graphics.getHeight()/6.75f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/13.5f);
 		this.backMainMenuButton.setBounds(Gdx.graphics.getWidth()/96f, Gdx.graphics.getHeight()/54f, Gdx.graphics.getWidth()/5.485f, Gdx.graphics.getHeight()/13.5f);
 		this.lockCursorButton.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/1.5f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.VSyncButton.setBounds(Gdx.graphics.getWidth()/2.704f, 700, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
-		this.biggerCursorButton.setBounds(Gdx.graphics.getWidth()/2.704f, 620, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
+		this.VSyncButton.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/1.5428f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
+		this.biggerCursorButton.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/1.7419f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
 		this.activateAndDeactivateAllSounds.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/2.8421f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
 		this.activateAndDeactivateMusic.setBounds(Gdx.graphics.getWidth()/2.704f, Gdx.graphics.getHeight()/3.375f, Gdx.graphics.getWidth()/54.85f, Gdx.graphics.getHeight()/30.85f);
 		this.showLanguagesButton.setBounds(Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
@@ -160,7 +160,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 		this.showMonitorsButton.setBounds(Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
 		this.chooseFullScreenButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.46938f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
 		this.chooseWindowedFullScreenButton.setBounds(Gdx.graphics.getWidth()/2.6853f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/6.5084f, Gdx.graphics.getHeight()/19.636f);
-		scrollFPSButton.setBounds(Gdx.graphics.getWidth()/2.2668f, 475, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
+		scrollFPSButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/2.2736f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
 		scrollMasterAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/1.3757f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
 		scrollEffectsAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
 		scrollEnvironmentalAudioButton.setBounds(Gdx.graphics.getWidth()/2.2668f, Gdx.graphics.getHeight()/1.9115f, Gdx.graphics.getWidth()/76.8f, Gdx.graphics.getHeight()/27f);
@@ -372,8 +372,8 @@ public class OptionsMenuScreen extends AbstractScreen{
 				World.clickSound.play();
 				this.VSyncButtonPlayed = true;
 			}else if(!this.VSyncButton.isPressed()) this.VSyncButtonPlayed = false;
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Vertical Sync", Gdx.graphics.getWidth()/2.56f, 725);
-			else super.font.draw(super.batch, "Sincronización vertical", Gdx.graphics.getWidth()/2.56f, 725);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Vertical Sync", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/1.4896f);
+			else super.font.draw(super.batch, "Sincronizaciï¿½n vertical", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/1.4896f);
 			
 			super.font.draw(super.batch, "Monitor", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2313f);
 			super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
@@ -478,16 +478,16 @@ public class OptionsMenuScreen extends AbstractScreen{
 				World.clickSound.play();
 				this.biggerCursorButtonPlayed = true;
 			}else if(!this.biggerCursorButton.isPressed()) this.biggerCursorButtonPlayed = false;
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Bigger cursor", Gdx.graphics.getWidth()/2.56f, 645);
-			else super.font.draw(super.batch, "Cursor más grande", Gdx.graphics.getWidth()/2.56f, 645);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Bigger cursor", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/1.6744f);
+			else super.font.draw(super.batch, "Cursor mï¿½s grande", Gdx.graphics.getWidth()/2.56f, Gdx.graphics.getHeight()/1.6744f);
 
-			super.font.draw(super.batch, "Max FPS:", Gdx.graphics.getWidth()/2.7042f, 560);
-			if(scrollFPSButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollFPSButton.setPosition(Gdx.graphics.getWidth()/1.9296f, 475);
-			if(scrollFPSButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollFPSButton.setPosition(Gdx.graphics.getWidth()/2.7428f, 475);
-			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, 490, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
+			super.font.draw(super.batch, "Max FPS:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.9285f);
+			if(scrollFPSButton.getX() >= Gdx.graphics.getWidth()/1.9296f) scrollFPSButton.setPosition(Gdx.graphics.getWidth()/1.9296f, Gdx.graphics.getHeight()/2.2736f);
+			if(scrollFPSButton.getX() <= Gdx.graphics.getWidth()/2.7428f) scrollFPSButton.setPosition(Gdx.graphics.getWidth()/2.7428f, Gdx.graphics.getHeight()/2.2736f);
+			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.2040f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollFPSButton.getX(), scrollFPSButton.getY(), scrollFPSButton.getWidth(), scrollFPSButton.getHeight());
 			this.floatFPS = ((scrollFPSButton.getX() - (Gdx.graphics.getWidth()/2.7507f)) * 120f) / 296f;
-			super.font.draw(super.batch, String.valueOf(Math.round(this.floatFPS)), Gdx.graphics.getWidth()/2.3703f, 560);
+			super.font.draw(super.batch, String.valueOf(Math.round(this.floatFPS)), Gdx.graphics.getWidth()/2.3703f, Gdx.graphics.getHeight()/1.9285f);
 		}else if(this.audioButtonPressed == true) {
 			this.buttonsStage.getRoot().removeActor(this.showLanguagesButton);
 			this.buttonsStage.getRoot().removeActor(this.showMonitorsButton);
@@ -502,8 +502,8 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.35f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollMasterAudioButton.getX(), scrollMasterAudioButton.getY(), scrollMasterAudioButton.getWidth(), scrollMasterAudioButton.getHeight());
 			this.floatMasterVolume = ((scrollMasterAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatMasterVolume)), 845, Gdx.graphics.getHeight()/1.2442f);
-			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatMasterVolume)), 890, Gdx.graphics.getHeight()/1.2442f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatMasterVolume)), 600, Gdx.graphics.getHeight()/1.2442f);
+			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatMasterVolume)), Gdx.graphics.getWidth()/2.1573f, Gdx.graphics.getHeight()/1.2442f);
 
 			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Effects audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.421f);
 			else super.font.draw(super.batch, "Volumen de los efectos:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.421f);
@@ -512,8 +512,8 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.5652f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollEffectsAudioButton.getX(), scrollEffectsAudioButton.getY(), scrollEffectsAudioButton.getWidth(), scrollEffectsAudioButton.getHeight());
 			this.floatEffectsVolume = ((scrollEffectsAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatEffectsVolume)), Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/1.4248f);
-			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatEffectsVolume)), 940, Gdx.graphics.getHeight()/1.4248f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatEffectsVolume)), 600, Gdx.graphics.getHeight()/1.4248f);
+			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatEffectsVolume)), Gdx.graphics.getWidth()/2.0425f, Gdx.graphics.getHeight()/1.4248f);
 			
 			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Environmental audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.6615f);
 			else super.font.draw(super.batch, "Volumen ambiental:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.6615f);
@@ -522,8 +522,8 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.8620f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollEnvironmentalAudioButton.getX(), scrollEnvironmentalAudioButton.getY(), scrollEnvironmentalAudioButton.getWidth(), scrollEnvironmentalAudioButton.getHeight());
 			this.floatEnvironmentalVolume = ((scrollEnvironmentalAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatEnvironmentalVolume)), Gdx.graphics.getWidth()/2.0645f, Gdx.graphics.getHeight()/1.6666f);
-			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatEnvironmentalVolume)), 900, Gdx.graphics.getHeight()/1.6666f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatEnvironmentalVolume)), 650, Gdx.graphics.getHeight()/1.6666f);
+			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatEnvironmentalVolume)), Gdx.graphics.getWidth()/2.1333f, Gdx.graphics.getHeight()/1.6666f);
 
 			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Music audio:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2f);
 			else super.font.draw(super.batch, "Volumen de la musica:", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2f);
@@ -532,8 +532,8 @@ public class OptionsMenuScreen extends AbstractScreen{
 			super.batch.draw(this.scrollBar, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.2978f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/108f);
 			super.batch.draw(this.scrollButtonTexture, scrollMusicAudioButton.getX(), scrollMusicAudioButton.getY(), scrollMusicAudioButton.getWidth(), scrollMusicAudioButton.getHeight());
 			this.floatMusicVolume = ((scrollMusicAudioButton.getX() - (Gdx.graphics.getWidth()/2.7428f)) * 100f) / 296f;
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatMusicVolume)), Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/2.0074f);
-			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatMusicVolume)), 930, Gdx.graphics.getHeight()/2.0074f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, String.valueOf(Math.round(this.floatMusicVolume)), 590, Gdx.graphics.getHeight()/2.0074f);
+			else super.font.draw(super.batch, String.valueOf(Math.round(this.floatMusicVolume)), Gdx.graphics.getWidth()/2.0645f, Gdx.graphics.getHeight()/2.0074f);
 
 			super.batch.draw(this.checkBox, this.activateAndDeactivateAllSounds.getX(), this.activateAndDeactivateAllSounds.getY(), this.activateAndDeactivateAllSounds.getWidth(), this.activateAndDeactivateAllSounds.getHeight());
 			if(this.activateAndDeactivateAllSounds.isPressed()) {
@@ -576,7 +576,7 @@ public class OptionsMenuScreen extends AbstractScreen{
 			
 			super.batch.draw(World.pressedButton, this.gameButton.getX(), this.gameButton.getY(), this.gameButton.getWidth(), this.gameButton.getHeight());
 			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Language selection", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2272f);
-			else super.font.draw(super.batch, "Selección del idioma", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2272f);
+			else super.font.draw(super.batch, "Selecciï¿½n del idioma", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2272f);
 			super.batch.draw(World.leftLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/18.0f);
 			super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.36708f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
 			super.batch.draw(World.topLittleFrame, Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2781f, Gdx.graphics.getWidth()/6.4f, Gdx.graphics.getHeight()/216f);
@@ -637,14 +637,14 @@ public class OptionsMenuScreen extends AbstractScreen{
 					this.chooseEnglishButtonPressed = false;
 					if(choosedMonitor.equals("Full screen") || choosedMonitor.equals("Pantalla completa")) choosedMonitor = "Pantalla completa";
 					else if(choosedMonitor.equals("Windowed(Full screen)") || choosedMonitor.equals("Modo ventana")) choosedMonitor = "Modo ventana";
-					choosedLanguage = "Español(España)";
+					choosedLanguage = "Espaï¿½ol(Espaï¿½a)";
 				}
 				if(this.chooseEnglishButtonPressed == true) super.batch.draw(World.secondBackFrame, this.chooseEnglishButton.getX(), this.chooseEnglishButton.getY(), this.chooseEnglishButton.getWidth(), this.chooseEnglishButton.getHeight());
 				else if(this.chooseSpanishButtonPressed == true) super.batch.draw(World.secondBackFrame, this.chooseSpanishButton.getX(), this.chooseSpanishButton.getY(), this.chooseSpanishButton.getWidth(), this.chooseSpanishButton.getHeight());
 				if(choosedLanguage.equals("English")) super.font.draw(super.batch, "English", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.40259f);
-				else super.font.draw(super.batch, "Inglés", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.40259f);
+				else super.font.draw(super.batch, "Inglï¿½s", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.40259f);
 				if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Spanish(Spain)", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.52112f);
-				else super.font.draw(super.batch, "Español(España)", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.52112f);
+				else super.font.draw(super.batch, "Espaï¿½ol(Espaï¿½a)", Gdx.graphics.getWidth()/2.66666f, Gdx.graphics.getHeight()/1.52112f);
 			}
 			super.batch.draw(this.smallTextBoxBorderless, Gdx.graphics.getWidth()/1.99999f, Gdx.graphics.getHeight()/1.35849f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/21.6f);
 			if(this.showLanguagesButtonPressed == false && this.showLanguagesButtonPressedOneTime == false) {
@@ -664,44 +664,44 @@ public class OptionsMenuScreen extends AbstractScreen{
 		}else if(this.shortCutButtonPressed == true) {
 			super.batch.draw(World.pressedButton, this.shortCutButton.getX(), this.shortCutButton.getY(), this.shortCutButton.getWidth(), this.shortCutButton.getHeight());
 			
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Right", 710, 870);
-			else super.font.draw(super.batch, "Derecha", 710, 870);
-			super.batch.draw(World.darkButton, 850, 835, 220, 50);
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Right arrow", 905, 870);
-			else super.font.draw(super.batch, "Flecha derecha", 885, 870);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Right", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2413f);
+			else super.font.draw(super.batch, "Derecha", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.2413f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/1.2934f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Right arrow", Gdx.graphics.getWidth()/2.1215f, Gdx.graphics.getHeight()/1.2413f);
+			else super.font.draw(super.batch, "Flecha derecha", Gdx.graphics.getWidth()/2.1694f, Gdx.graphics.getHeight()/1.2413f);
 			
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Left", 710, 790);
-			else super.font.draw(super.batch, "izquierda", 710, 790);
-			super.batch.draw(World.darkButton, 850, 755, 220, 50);
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Left arrow", 913, 790);
-			else super.font.draw(super.batch, "Flecha izquierda", 883, 790);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Left", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.3670f);
+			else super.font.draw(super.batch, "izquierda", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.3670f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/1.4304f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Left arrow", Gdx.graphics.getWidth()/2.1029f, Gdx.graphics.getHeight()/1.3670f);
+			else super.font.draw(super.batch, "Flecha izquierda", Gdx.graphics.getWidth()/2.1744f, Gdx.graphics.getHeight()/1.3670f);
 			
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Up", 710, 710);
-			else super.font.draw(super.batch, "Arriba", 710, 710);
-			super.batch.draw(World.darkButton, 850, 675, 220, 50);
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Up arrow", 918, 710);
-			else super.font.draw(super.batch, "Flecha arriba", 900, 710);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Up", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.5211f);
+			else super.font.draw(super.batch, "Arriba", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.5211f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/1.6f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Up arrow", Gdx.graphics.getWidth()/2.0915f, Gdx.graphics.getHeight()/1.5211f);
+			else super.font.draw(super.batch, "Flecha arriba", Gdx.graphics.getWidth()/2.1333f, Gdx.graphics.getHeight()/1.5211f);
 			
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Down", 710, 630);
-			else super.font.draw(super.batch, "Abajo", 710, 630);
-			super.batch.draw(World.darkButton, 850, 595, 220, 50);
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Down arrow", 905, 630);
-			else super.font.draw(super.batch, "Flecha abajo", 900, 630);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Down", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.7142f);
+			else super.font.draw(super.batch, "Abajo", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.7142f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/1.8151f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Down arrow", Gdx.graphics.getWidth()/2.1215f, Gdx.graphics.getHeight()/1.7142f);
+			else super.font.draw(super.batch, "Flecha abajo", Gdx.graphics.getWidth()/2.1333f, Gdx.graphics.getHeight()/1.7142f);
 			
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Jump", 710, 550);
-			else super.font.draw(super.batch, "Saltar", 710, 550);
-			super.batch.draw(World.darkButton, 850, 515, 220, 50);
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Space", 930, 550);
-			else super.font.draw(super.batch, "Espacio", 925, 550);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Jump", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.9636f);
+			else super.font.draw(super.batch, "Saltar", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/1.9636f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/2.0970f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Space", Gdx.graphics.getWidth()/2.0645f, Gdx.graphics.getHeight()/1.9636f);
+			else super.font.draw(super.batch, "Espacio", Gdx.graphics.getWidth()/2.0756f, Gdx.graphics.getHeight()/1.9636f);
 			
-			super.font.draw(super.batch, "Dash", 710, 470);
-			super.batch.draw(World.darkButton, 850, 435, 220, 50);
-			super.font.draw(super.batch, "E", 955, 470);
+			super.font.draw(super.batch, "Dash", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.2978f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/2.4827f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			super.font.draw(super.batch, "E", Gdx.graphics.getWidth()/2.0104f, Gdx.graphics.getHeight()/2.2978f);
 			
-			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Attack", 710, 390);
-			else super.font.draw(super.batch, "Atacar", 710, 390);
-			super.batch.draw(World.darkButton, 850, 355, 220, 50);
-			super.font.draw(super.batch, "Q", 955, 390);
+			if(choosedLanguage.equals("English")) super.font.draw(super.batch, "Attack", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.7692f);
+			else super.font.draw(super.batch, "Atacar", Gdx.graphics.getWidth()/2.7042f, Gdx.graphics.getHeight()/2.7692f);
+			super.batch.draw(World.darkButton, Gdx.graphics.getWidth()/2.2588f, Gdx.graphics.getHeight()/3.0422f, Gdx.graphics.getWidth()/8.7272f, Gdx.graphics.getHeight()/21.6f);
+			super.font.draw(super.batch, "Q", Gdx.graphics.getWidth()/2.0104f, Gdx.graphics.getHeight()/2.7692f);
 		}
 
 		if(this.initialConfigurationButton.isPressed()) {
@@ -724,31 +724,31 @@ public class OptionsMenuScreen extends AbstractScreen{
 		super.font.draw(super.batch, "VIDEO", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.24137f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "AUDIO", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.36708f);
-		else super.font.draw(super.batch, "VOLUMEN", 410, Gdx.graphics.getHeight()/1.36708f);
+		else super.font.draw(super.batch, "VOLUMEN", Gdx.graphics.getWidth()/4.6829f, Gdx.graphics.getHeight()/1.36708f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "GAME", Gdx.graphics.getWidth()/4.4137f, Gdx.graphics.getHeight()/1.52112f);
-		else super.font.draw(super.batch, "JUEGO", 430, Gdx.graphics.getHeight()/1.52112f);
+		else super.font.draw(super.batch, "JUEGO", Gdx.graphics.getWidth()/4.4651f, Gdx.graphics.getHeight()/1.52112f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "SHORTCUTS", Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/1.7142f);
-		else super.font.draw(super.batch, "ATAJOS", 427, Gdx.graphics.getHeight()/1.7142f);
+		else super.font.draw(super.batch, "ATAJOS", Gdx.graphics.getWidth()/4.4964f, Gdx.graphics.getHeight()/1.7142f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "INITIAL CONFIGURATION", Gdx.graphics.getWidth()/5.7313f, Gdx.graphics.getHeight()/5.1428f);
-		else super.font.draw(super.batch, "CONFIGURACION INICIAL",333, Gdx.graphics.getHeight()/5.1428f);
+		else super.font.draw(super.batch, "CONFIGURACION INICIAL", Gdx.graphics.getWidth()/5.7657f, Gdx.graphics.getHeight()/5.1428f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "CANCEL", Gdx.graphics.getWidth()/2.31325f, Gdx.graphics.getHeight()/5.1428f);
-		else super.font.draw(super.batch, "CANCELAR", 810, Gdx.graphics.getHeight()/5.1428f);
+		else super.font.draw(super.batch, "CANCELAR", Gdx.graphics.getWidth()/2.3703f, Gdx.graphics.getHeight()/5.1428f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "APPLY", Gdx.graphics.getWidth()/1.6842f, Gdx.graphics.getHeight()/5.1428f);
-		else super.font.draw(super.batch, "APLICAR", 1130, Gdx.graphics.getHeight()/5.1428f);
+		else super.font.draw(super.batch, "APLICAR", Gdx.graphics.getWidth()/1.6991f, Gdx.graphics.getHeight()/5.1428f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "ACCEPT", Gdx.graphics.getWidth()/1.33333f, Gdx.graphics.getHeight()/5.1428f);
-		else super.font.draw(super.batch, "ACEPTAR", 1430, Gdx.graphics.getHeight()/5.1428f);
+		else super.font.draw(super.batch, "ACEPTAR", Gdx.graphics.getWidth()/1.3426f, Gdx.graphics.getHeight()/5.1428f);
 		
-		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "BACK", 170, Gdx.graphics.getHeight()/15.4285f);
-		else super.font.draw(super.batch, "ATRAS", 160, Gdx.graphics.getHeight()/15.4285f);
+		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "BACK", Gdx.graphics.getWidth()/11.2941f, Gdx.graphics.getHeight()/15.4285f);
+		else super.font.draw(super.batch, "ATRAS", Gdx.graphics.getWidth()/12f, Gdx.graphics.getHeight()/15.4285f);
 		
 		if(choosedLanguage.equals("English")) super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.0645f, Gdx.graphics.getHeight()/1.13684f);
-		else super.font.draw(super.batch, "OPCIONES", 920, Gdx.graphics.getHeight()/1.13684f);
+		else super.font.draw(super.batch, "OPCIONES", Gdx.graphics.getWidth()/2.0869f, Gdx.graphics.getHeight()/1.13684f);
 		super.batch.end();
 		
 		if(VSyncButtonPressed) World.setVSync(true);

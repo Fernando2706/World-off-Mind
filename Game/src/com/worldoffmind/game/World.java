@@ -26,20 +26,20 @@ public class World extends Game{
 		OptionsMenuScreen = new OptionsMenuScreen();
 		StartGameScreen = new StartGameScreen();
 		ForestOfSoulsScreen = new ForestOfSoulsScreen();
-		
+		/*
 		this.fileGame1 = Gdx.files.local("FilesForGames/Game1.txt");
 		this.fileGame2 = Gdx.files.local("FilesForGames/Game2.txt");
 		this.fileGame3 = Gdx.files.local("FilesForGames/Game3.txt");
 		this.fileGame4 = Gdx.files.local("FilesForGames/Game4.txt");
 		this.fileGame5 = Gdx.files.local("FilesForGames/Game5.txt");
-		
+		*/
 		this.finalStringGame1 = "";
 		this.finalStringGame2 = "";
 		this.finalStringGame3 = "";
 		this.finalStringGame4 = "";
 		this.finalStringGame5 = "";
 		
-		this.decodificateFile();
+		//this.decodificateFile();
 		
 		// Cursor
 		this.cursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("WorldTextures/dwarven_gauntlet.png")), 0, 0);
@@ -188,7 +188,7 @@ public class World extends Game{
 	
 	@Override
 	public void dispose () {
-		instanciateFile();
+		//instanciateFile();
 		Gdx.app.exit();
 	}
 }

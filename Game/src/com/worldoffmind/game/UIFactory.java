@@ -38,7 +38,7 @@ public class UIFactory{
 			
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				OptionsMenuScreen.scrollFPSButton.setPosition(Gdx.input.getX(), 475);
+				OptionsMenuScreen.scrollFPSButton.setPosition(Gdx.input.getX(), Gdx.graphics.getHeight()/2.2736f);
 			}
 		};
 	}
@@ -53,7 +53,7 @@ public class UIFactory{
 			
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				OptionsMenuScreen.scrollMasterAudioButton.setPosition(Gdx.input.getX(), 785);
+				OptionsMenuScreen.scrollMasterAudioButton.setPosition(Gdx.input.getX(), Gdx.graphics.getHeight()/1.3757f);
 			}
 		};
 	}
@@ -68,7 +68,7 @@ public class UIFactory{
 			
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				OptionsMenuScreen.scrollEffectsAudioButton.setPosition(Gdx.input.getX(), 675);
+				OptionsMenuScreen.scrollEffectsAudioButton.setPosition(Gdx.input.getX(), Gdx.graphics.getHeight()/1.6f);
 			}
 		};
 	}
@@ -83,7 +83,7 @@ public class UIFactory{
 			
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				OptionsMenuScreen.scrollEnvironmentalAudioButton.setPosition(Gdx.input.getX(), 565);
+				OptionsMenuScreen.scrollEnvironmentalAudioButton.setPosition(Gdx.input.getX(), Gdx.graphics.getHeight()/1.9115f);
 			}
 		};
 	}
@@ -98,7 +98,7 @@ public class UIFactory{
 			
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				OptionsMenuScreen.scrollMusicAudioButton.setPosition(Gdx.input.getX(), 455);
+				OptionsMenuScreen.scrollMusicAudioButton.setPosition(Gdx.input.getX(), Gdx.graphics.getHeight()/2.3736f);
 			}
 		};
 	}

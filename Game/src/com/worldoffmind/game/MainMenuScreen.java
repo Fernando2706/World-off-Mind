@@ -141,16 +141,16 @@ public class MainMenuScreen extends AbstractScreen {
 		}
 		
 		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "START GAME", Gdx.graphics.getWidth()/2.2068f, Gdx.graphics.getHeight()/1.7704f);
-		else super.font.draw(super.batch, "EMPEZAR PARTIDA", 840, Gdx.graphics.getHeight()/1.7704f);
+		else super.font.draw(super.batch, "EMPEZAR PARTIDA", Gdx.graphics.getWidth()/2.2857f, Gdx.graphics.getHeight()/1.7704f);
 		
 		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "OPTIONS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/2.3225f);
-		else super.font.draw(super.batch, "OPCIONES", 880, Gdx.graphics.getHeight()/2.3225f);
+		else super.font.draw(super.batch, "OPCIONES", Gdx.graphics.getWidth()/2.1818f, Gdx.graphics.getHeight()/2.3225f);
 		
 		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "ACHIEVEMENTS", Gdx.graphics.getWidth()/2.2325f, Gdx.graphics.getHeight()/3.3230f);
-		else super.font.draw(super.batch, "LOGROS", 895, Gdx.graphics.getHeight()/3.3230f);
+		else super.font.draw(super.batch, "LOGROS", Gdx.graphics.getWidth()/2.1452f, Gdx.graphics.getHeight()/3.3230f);
 		
 		if(OptionsMenuScreen.choosedLanguage.equals("English")) super.font.draw(super.batch, "EXIT", Gdx.graphics.getWidth()/2.0869f, Gdx.graphics.getHeight()/5.837f);
-		else super.font.draw(super.batch, "SALIR", 910, Gdx.graphics.getHeight()/5.837f);
+		else super.font.draw(super.batch, "SALIR", Gdx.graphics.getWidth()/2.1098f, Gdx.graphics.getHeight()/5.837f);
 		
 		super.font.draw(super.batch, "Version-Alpha", Gdx.graphics.getWidth()/1.0786f, Gdx.graphics.getHeight()/43.2f);
 		super.batch.end();

@@ -29,15 +29,15 @@ public class StartGameScreen extends AbstractScreen{
 		super.font.setColor(Color.GOLDENROD);
 		super.font.getData().setScale(Gdx.graphics.getWidth()/1280f, Gdx.graphics.getHeight()/720f);
 		this.fontForNumbers = new BitmapFont();
-		this.fontForNumbers.getData().setScale(3.5f, 3.5f);
+		this.fontForNumbers.getData().setScale(Gdx.graphics.getWidth()/548.5714f, Gdx.graphics.getHeight()/308.5714f);
 		this.fontForTitle = new BitmapFont();
-		this.fontForTitle.getData().setScale(5.0f, 5.0f);
+		this.fontForTitle.getData().setScale(Gdx.graphics.getWidth()/384f, Gdx.graphics.getHeight()/216f);
 		this.fontUpperTitle = new BitmapFont();
-		this.fontUpperTitle.getData().setScale(3.9f, 3.9f);
+		this.fontUpperTitle.getData().setScale(Gdx.graphics.getWidth()/492.3076f, Gdx.graphics.getHeight()/276.9230f);
 		this.fontToAsk = new BitmapFont();
-		this.fontToAsk.getData().setScale(2.5f, 2.5f);
+		this.fontToAsk.getData().setScale(Gdx.graphics.getWidth()/768f, Gdx.graphics.getHeight()/432f);
 		this.fontToAskUpper = new BitmapFont();
-		this.fontToAskUpper.getData().setScale(2.8f, 2.8f);
+		this.fontToAskUpper.getData().setScale(Gdx.graphics.getWidth()/685.7142f, Gdx.graphics.getHeight()/385.7142f);
 
 		this.batchForProfiles = new SpriteBatch();
 		this.batchForProfiles.setColor(1, 1, 1, 0.2f);
@@ -101,27 +101,27 @@ public class StartGameScreen extends AbstractScreen{
 		this.askToDeleteGame5YesButton = new Button();
 		this.askToDeleteGame5NoButton = new Button();
 
-		this.newGame1Button.setBounds(400, 750, 800, 100);
-		this.newGame2Button.setBounds(400, 600, 800, 100);
-		this.newGame3Button.setBounds(400, 450, 800, 100);
-		this.newGame4Button.setBounds(400, 300, 800, 100);
-		this.newGame5Button.setBounds(400, 150, 800, 100);
-		this.backToMainMenuButton.setBounds(880, 25, 200, 50);
-		this.deleteGame1Button.setBounds(1395, 775, 365, 50);
-		this.deleteGame2Button.setBounds(1395, 625, 365, 50);
-		this.deleteGame3Button.setBounds(1395, 475, 365, 50);
-		this.deleteGame4Button.setBounds(1395, 325, 365, 50);
-		this.deleteGame5Button.setBounds(1395, 175, 365, 50);
-		this.askToDeleteGame1YesButton.setBounds(1490, 730, 70, 30);
-		this.askToDeleteGame1NoButton.setBounds(1620, 730, 50, 30);
-		this.askToDeleteGame2YesButton.setBounds(1490, 580, 70, 30);
-		this.askToDeleteGame2NoButton.setBounds(1620, 580, 50, 30);
-		this.askToDeleteGame3YesButton.setBounds(1490, 430, 70, 30);
-		this.askToDeleteGame3NoButton.setBounds(1620, 430, 50, 30);
-		this.askToDeleteGame4YesButton.setBounds(1490, 280, 70, 30);
-		this.askToDeleteGame4NoButton.setBounds(1620, 280, 50, 30);
-		this.askToDeleteGame5YesButton.setBounds(1490, 130, 70, 30);
-		this.askToDeleteGame5NoButton.setBounds(1620, 130, 50, 30);
+		this.newGame1Button.setBounds(Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/1.44f, Gdx.graphics.getWidth()/2.4f, Gdx.graphics.getHeight()/10.8f);
+		this.newGame2Button.setBounds(Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/1.8f, Gdx.graphics.getWidth()/2.4f, Gdx.graphics.getHeight()/10.8f);
+		this.newGame3Button.setBounds(Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/2.4f, Gdx.graphics.getWidth()/2.4f, Gdx.graphics.getHeight()/10.8f);
+		this.newGame4Button.setBounds(Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/3.6f, Gdx.graphics.getWidth()/2.4f, Gdx.graphics.getHeight()/10.8f);
+		this.newGame5Button.setBounds(Gdx.graphics.getWidth()/4.8f, Gdx.graphics.getHeight()/7.2f, Gdx.graphics.getWidth()/2.4f, Gdx.graphics.getHeight()/10.8f);
+		this.backToMainMenuButton.setBounds(Gdx.graphics.getWidth()/2.1818f, Gdx.graphics.getHeight()/43.2f, Gdx.graphics.getWidth()/9.6f, Gdx.graphics.getHeight()/21.6f);
+		this.deleteGame1Button.setBounds(Gdx.graphics.getWidth()/1.3763f, Gdx.graphics.getHeight()/1.3935f, Gdx.graphics.getWidth()/5.2602f, Gdx.graphics.getHeight()/21.6f);
+		this.deleteGame2Button.setBounds(Gdx.graphics.getWidth()/1.3763f, Gdx.graphics.getHeight()/1.7280f, Gdx.graphics.getWidth()/5.2602f, Gdx.graphics.getHeight()/21.6f);
+		this.deleteGame3Button.setBounds(Gdx.graphics.getWidth()/1.3763f, Gdx.graphics.getHeight()/2.2737f, Gdx.graphics.getWidth()/5.2602f, Gdx.graphics.getHeight()/21.6f);
+		this.deleteGame4Button.setBounds(Gdx.graphics.getWidth()/1.3763f, Gdx.graphics.getHeight()/3.3231f, Gdx.graphics.getWidth()/5.2602f, Gdx.graphics.getHeight()/21.6f);
+		this.deleteGame5Button.setBounds(Gdx.graphics.getWidth()/1.3763f, Gdx.graphics.getHeight()/6.1714f, Gdx.graphics.getWidth()/5.2602f, Gdx.graphics.getHeight()/21.6f);
+		this.askToDeleteGame1YesButton.setBounds(Gdx.graphics.getWidth()/1.2885f, Gdx.graphics.getHeight()/1.4795f, Gdx.graphics.getWidth()/27.4285f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame1NoButton.setBounds(Gdx.graphics.getWidth()/1.1851f, Gdx.graphics.getHeight()/1.4795f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame2YesButton.setBounds(Gdx.graphics.getWidth()/1.2885f, Gdx.graphics.getHeight()/1.8621f, Gdx.graphics.getWidth()/27.4285f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame2NoButton.setBounds(Gdx.graphics.getWidth()/1.1851f, Gdx.graphics.getHeight()/1.8621f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame3YesButton.setBounds(Gdx.graphics.getWidth()/1.2885f, Gdx.graphics.getHeight()/2.5116f, Gdx.graphics.getWidth()/27.4285f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame3NoButton.setBounds(Gdx.graphics.getWidth()/1.1851f, Gdx.graphics.getHeight()/2.5116f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame4YesButton.setBounds(Gdx.graphics.getWidth()/1.2885f, Gdx.graphics.getHeight()/3.8571f, Gdx.graphics.getWidth()/27.4285f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame4NoButton.setBounds(Gdx.graphics.getWidth()/1.1851f, Gdx.graphics.getHeight()/3.8571f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame5YesButton.setBounds(Gdx.graphics.getWidth()/1.2885f, Gdx.graphics.getHeight()/8.3077f, Gdx.graphics.getWidth()/27.4285f, Gdx.graphics.getHeight()/36f);
+		this.askToDeleteGame5NoButton.setBounds(Gdx.graphics.getWidth()/1.1851f, Gdx.graphics.getHeight()/8.3077f, Gdx.graphics.getWidth()/38.4f, Gdx.graphics.getHeight()/36f);
 
 		this.buttonsGroup.addActor(this.newGame1Button);
 		this.buttonsGroup.addActor(this.newGame2Button);
@@ -183,43 +183,43 @@ public class StartGameScreen extends AbstractScreen{
 		this.batchForProfiles.end();
 
 		super.batch.begin();
-		this.fontForTitle.draw(super.batch, "SELECT PROFILE", 660, 1000);
+		this.fontForTitle.draw(super.batch, "SELECT PROFILE", Gdx.graphics.getWidth()/2.9091f, Gdx.graphics.getHeight()/1.08f);
 
 		if(this.newGame1Button.isOver()) {
 			if(this.newGame1ButtonPlayed == false) {
 				World.clickSound.play();
 				this.newGame1ButtonPlayed = true;
 			}
-			super.batch.draw(World.leftMarker, 260, 780, 40, 40);
-			super.batch.draw(World.rightMarker, 1240, 780, 40, 40);
+			super.batch.draw(World.leftMarker, Gdx.graphics.getWidth()/7.3846f, Gdx.graphics.getHeight()/1.3846f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
+			super.batch.draw(World.rightMarker, Gdx.graphics.getWidth()/1.5484f, Gdx.graphics.getHeight()/1.3846f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
 		}else if(this.newGame2Button.isOver()) {
 			if(this.newGame2ButtonPlayed == false) {
 				World.clickSound.play();
 				this.newGame2ButtonPlayed = true;
 			}
-			super.batch.draw(World.leftMarker, 260, 630, 40, 40);
-			super.batch.draw(World.rightMarker, 1240, 630, 40, 40);
+			super.batch.draw(World.leftMarker, Gdx.graphics.getWidth()/7.3846f, Gdx.graphics.getHeight()/1.7143f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
+			super.batch.draw(World.rightMarker, Gdx.graphics.getWidth()/1.5484f, Gdx.graphics.getHeight()/1.7143f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
 		}else if(this.newGame3Button.isOver()) {
 			if(this.newGame3ButtonPlayed == false) {
 				World.clickSound.play();
 				this.newGame3ButtonPlayed = true;
 			}
-			super.batch.draw(World.leftMarker, 260, 480, 40, 40);
-			super.batch.draw(World.rightMarker, 1240, 480, 40, 40);
+			super.batch.draw(World.leftMarker, Gdx.graphics.getWidth()/7.3846f, Gdx.graphics.getHeight()/2.25f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
+			super.batch.draw(World.rightMarker, Gdx.graphics.getWidth()/1.5484f, Gdx.graphics.getHeight()/2.25f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
 		}else if(this.newGame4Button.isOver()) {
 			if(this.newGame4ButtonPlayed == false) {
 				World.clickSound.play();
 				this.newGame4ButtonPlayed = true;
 			}
-			super.batch.draw(World.leftMarker, 260, 330, 40, 40);
-			super.batch.draw(World.rightMarker, 1240, 330, 40, 40);
+			super.batch.draw(World.leftMarker, Gdx.graphics.getWidth()/7.3846f, Gdx.graphics.getHeight()/3.2727f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
+			super.batch.draw(World.rightMarker, Gdx.graphics.getWidth()/1.5484f, Gdx.graphics.getHeight()/3.2727f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
 		}else if(this.newGame5Button.isOver()) {
 			if(this.newGame5ButtonPlayed == false) {
 				World.clickSound.play();
 				this.newGame5ButtonPlayed = true;
 			}
-			super.batch.draw(World.leftMarker, 260, 180, 40, 40);
-			super.batch.draw(World.rightMarker, 1240, 180, 40, 40);
+			super.batch.draw(World.leftMarker, Gdx.graphics.getWidth()/7.3846f, Gdx.graphics.getHeight()/6f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
+			super.batch.draw(World.rightMarker, Gdx.graphics.getWidth()/1.5484f, Gdx.graphics.getHeight()/6f, Gdx.graphics.getWidth()/48f, Gdx.graphics.getHeight()/27f);
 		}else {
 			this.newGame1ButtonPlayed = false;
 			this.newGame2ButtonPlayed = false;
@@ -228,17 +228,17 @@ public class StartGameScreen extends AbstractScreen{
 			this.newGame5ButtonPlayed = false;
 		}
 
-		this.fontForNumbers.draw(super.batch, "1.", 340, 820);
-		this.fontForNumbers.draw(super.batch, "2.", 340, 670);
-		this.fontForNumbers.draw(super.batch, "3.", 340, 520);
-		this.fontForNumbers.draw(super.batch, "4.", 340, 370);
-		this.fontForNumbers.draw(super.batch, "5.", 340, 220);
-		super.batch.draw(World.bottomLittleFrame, 340, 870, 860, 5);
-		super.batch.draw(World.bottomLittleFrame, 340, 720, 860, 5);
-		super.batch.draw(World.bottomLittleFrame, 340, 570, 860, 5);
-		super.batch.draw(World.bottomLittleFrame, 340, 420, 860, 5);
-		super.batch.draw(World.bottomLittleFrame, 340, 270, 860, 5);
-		super.batch.draw(World.bottomLittleFrame, 340, 120, 860, 5);
+		this.fontForNumbers.draw(super.batch, "1.", Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/1.3171f);
+		this.fontForNumbers.draw(super.batch, "2.", Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/1.6119f);
+		this.fontForNumbers.draw(super.batch, "3.", Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/2.0769f);
+		this.fontForNumbers.draw(super.batch, "4.", Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/2.9189f);
+		this.fontForNumbers.draw(super.batch, "5.", Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/4.9091f);
+		super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/1.2414f, Gdx.graphics.getWidth()/2.2326f, Gdx.graphics.getHeight()/216f);
+		super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/1.5f, Gdx.graphics.getWidth()/2.2326f, Gdx.graphics.getHeight()/216f);
+		super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/1.8947f, Gdx.graphics.getWidth()/2.2326f, Gdx.graphics.getHeight()/216f);
+		super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/2.5714f, Gdx.graphics.getWidth()/2.2326f, Gdx.graphics.getHeight()/216f);
+		super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/4f, Gdx.graphics.getWidth()/2.2326f, Gdx.graphics.getHeight()/216f);
+		super.batch.draw(World.bottomLittleFrame, Gdx.graphics.getWidth()/5.6471f, Gdx.graphics.getHeight()/9f, Gdx.graphics.getWidth()/2.2326f, Gdx.graphics.getHeight()/216f);
 
 		if(this.newGame1Button.isPressed()) this.game1Started = true;
 		if(this.newGame2Button.isPressed()) this.game2Started = true;
@@ -255,17 +255,17 @@ public class StartGameScreen extends AbstractScreen{
 				this.deleteGame5ButtonPressed = false;
 			}
 			if(this.deleteGame1ButtonPressed == true) {
-				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", 1390, 820);
+				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/1.3171f);
 
 				if(this.askToDeleteGame1YesButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "YES", 1490, 760);
+					this.fontToAskUpper.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/1.4211f);
 					if(this.askToDeleteGame1YesButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame1YesButtonPlayed = true;
 					}
 				}else{
 					this.askToDeleteGame1YesButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "YES", 1490, 760);
+					this.fontToAsk.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/1.4211f);
 				}
 				if(this.askToDeleteGame1YesButton.isPressed()) {
 					this.game1Started = false;
@@ -273,32 +273,32 @@ public class StartGameScreen extends AbstractScreen{
 				}
 
 				if(this.askToDeleteGame1NoButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "NO", 1620, 760);
+					this.fontToAskUpper.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/1.4211f);
 					if(this.askToDeleteGame1NoButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame1NoButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame1NoButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "NO", 1620, 760);
+					this.fontToAsk.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/1.4211f);
 				}
 				if(this.askToDeleteGame1NoButton.isPressed()) {
 					this.deleteGame1ButtonPressed = false;
 				}
 			}else {
 				if(this.deleteGame1Button.isOver()) {
-					this.fontUpperTitle.draw(super.batch, "DELETE GAME", 1390, 820);
+					this.fontUpperTitle.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/1.3171f);
 					if(this.deleteGame1ButtonPlayed == false) {
 						World.clickSound.play();
 						this.deleteGame1ButtonPlayed = true;
 					}
 				}else {
-					this.fontForNumbers.draw(super.batch, "DELETE GAME", 1400, 820);
+					this.fontForNumbers.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3714f, Gdx.graphics.getHeight()/1.3171f);
 					this.deleteGame1ButtonPlayed = false;
 				}
 			}
 		}else {
-			this.fontForNumbers.draw(super.batch, "NEW GAME", 480, 820);
+			this.fontForNumbers.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/4f, Gdx.graphics.getHeight()/1.3171f);
 		}
 
 		if(this.game2Started == true) {
@@ -310,17 +310,17 @@ public class StartGameScreen extends AbstractScreen{
 				this.deleteGame5ButtonPressed = false;
 			}
 			if(this.deleteGame2ButtonPressed == true) {
-				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", 1390, 670);
+				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/1.6119f);
 
 				if(this.askToDeleteGame2YesButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "YES", 1490, 610);
+					this.fontToAskUpper.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/1.7705f);
 					if(this.askToDeleteGame2YesButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame2YesButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame2YesButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "YES", 1490, 610);
+					this.fontToAsk.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/1.7705f);
 				}
 				if(this.askToDeleteGame2YesButton.isPressed()) {
 					this.game2Started = false;
@@ -328,32 +328,32 @@ public class StartGameScreen extends AbstractScreen{
 				}
 				
 				if(this.askToDeleteGame2NoButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "NO", 1620, 610);
+					this.fontToAskUpper.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/1.7705f);
 					if(this.askToDeleteGame2NoButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame2NoButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame2NoButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "NO", 1620, 610);
+					this.fontToAsk.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/1.7705f);
 				}
 				if(this.askToDeleteGame2NoButton.isPressed()) {
 					this.deleteGame2ButtonPressed = false;
 				}
 			}else {
 				if(this.deleteGame2Button.isOver()) {
-					this.fontUpperTitle.draw(super.batch, "DELETE GAME", 1390, 670);
+					this.fontUpperTitle.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/1.6119f);
 					if(this.deleteGame2ButtonPlayed == false) {
 						World.clickSound.play();
 						this.deleteGame2ButtonPlayed = true;
 					}
 				}else {
-					this.fontForNumbers.draw(super.batch, "DELETE GAME", 1400, 670);
+					this.fontForNumbers.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3714f, Gdx.graphics.getHeight()/1.6119f);
 					this.deleteGame2ButtonPlayed = false;
 				}
 			}
 		}else {
-			this.fontForNumbers.draw(super.batch, "NEW GAME", 480, 670);
+			this.fontForNumbers.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/4f, Gdx.graphics.getHeight()/1.6119f);
 		}
 
 		if(this.game3Started == true) {
@@ -365,17 +365,17 @@ public class StartGameScreen extends AbstractScreen{
 				this.deleteGame5ButtonPressed = false;
 			}
 			if(this.deleteGame3ButtonPressed == true) {
-				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", 1390, 520);
+				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/2.0769f);
 				
 				if(this.askToDeleteGame3YesButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "YES", 1490, 460);
+					this.fontToAskUpper.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/2.3478f);
 					if(this.askToDeleteGame3YesButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame3YesButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame3YesButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "YES", 1490, 460);
+					this.fontToAsk.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/2.3478f);
 				}
 				if(this.askToDeleteGame3YesButton.isPressed()) {
 					this.game3Started = false;
@@ -383,32 +383,32 @@ public class StartGameScreen extends AbstractScreen{
 				}
 				
 				if(this.askToDeleteGame3NoButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "NO", 1620, 460);
+					this.fontToAskUpper.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/2.3478f);
 					if(this.askToDeleteGame3NoButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame3NoButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame3NoButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "NO", 1620, 460);
+					this.fontToAsk.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/2.3478f);
 				}
 				if(this.askToDeleteGame3NoButton.isPressed()) {
 					this.deleteGame3ButtonPressed = false;
 				}
 			}else {
 				if(this.deleteGame3Button.isOver()) {
-					this.fontUpperTitle.draw(super.batch, "DELETE GAME", 1390, 520);
+					this.fontUpperTitle.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/2.0769f);
 					if(this.deleteGame3ButtonPlayed == false) {
 						World.clickSound.play();
 						this.deleteGame3ButtonPlayed = true;
 					}
 				}else {
-					this.fontForNumbers.draw(super.batch, "DELETE GAME", 1400, 520);
+					this.fontForNumbers.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3714f, Gdx.graphics.getHeight()/2.0769f);
 					this.deleteGame3ButtonPlayed = false;
 				}
 			}
 		}else{
-			this.fontForNumbers.draw(super.batch, "NEW GAME", 480, 520);
+			this.fontForNumbers.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/4f, Gdx.graphics.getHeight()/2.0769f);
 		}
 
 		if(this.game4Started == true) {
@@ -420,17 +420,17 @@ public class StartGameScreen extends AbstractScreen{
 				this.deleteGame5ButtonPressed = false;
 			}
 			if(this.deleteGame4ButtonPressed == true) {
-				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", 1390, 370);
+				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/2.9189f);
 				
 				if(this.askToDeleteGame4YesButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "YES", 1490, 310);
+					this.fontToAskUpper.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/3.4839f);
 					if(this.askToDeleteGame4YesButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame4YesButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame4YesButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "YES", 1490, 310);
+					this.fontToAsk.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/3.4839f);
 				}
 				if(this.askToDeleteGame4YesButton.isPressed()) {
 					this.game4Started = false;
@@ -438,32 +438,32 @@ public class StartGameScreen extends AbstractScreen{
 				}
 				
 				if(this.askToDeleteGame4NoButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "NO", 1620, 310);
+					this.fontToAskUpper.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/3.4839f);
 					if(this.askToDeleteGame4NoButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame4NoButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame4NoButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "NO", 1620, 310);
+					this.fontToAsk.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/3.4839f);
 				}
 				if(this.askToDeleteGame4NoButton.isPressed()) {
 					this.deleteGame4ButtonPressed = false;
 				}
 			}else {
 				if(this.deleteGame4Button.isOver()) {
-					this.fontUpperTitle.draw(super.batch, "DELETE GAME", 1390, 370);
+					this.fontUpperTitle.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/2.9189f);
 					if(this.deleteGame4ButtonPlayed == false) {
 						World.clickSound.play();
 						this.deleteGame4ButtonPlayed = true;
 					}
 				}else {
-					this.fontForNumbers.draw(super.batch, "DELETE GAME", 1400, 370);
+					this.fontForNumbers.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3714f, Gdx.graphics.getHeight()/2.9189f);
 					this.deleteGame4ButtonPlayed = false;
 				}
 			}
 		}else {
-			this.fontForNumbers.draw(super.batch, "NEW GAME", 480, 370);
+			this.fontForNumbers.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/4f, Gdx.graphics.getHeight()/2.9189f);
 		}
 
 		if(this.game5Started == true) {
@@ -475,17 +475,17 @@ public class StartGameScreen extends AbstractScreen{
 				this.deleteGame5ButtonPressed = true;
 			}
 			if(this.deleteGame5ButtonPressed == true) {
-				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", 1390, 220);
+				this.fontForNumbers.draw(super.batch, "ARE YOU SURE?", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/4.9091f);
 				
 				if(this.askToDeleteGame5YesButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "YES", 1490, 160);
+					this.fontToAskUpper.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/6.75f);
 					if(this.askToDeleteGame5YesButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame5YesButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame5YesButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "YES", 1490, 160);
+					this.fontToAsk.draw(super.batch, "YES", Gdx.graphics.getWidth()/1.2886f, Gdx.graphics.getHeight()/6.75f);
 				}
 				if(this.askToDeleteGame5YesButton.isPressed()) {
 					this.game5Started = false;
@@ -493,32 +493,32 @@ public class StartGameScreen extends AbstractScreen{
 				}
 				
 				if(this.askToDeleteGame5NoButton.isOver()) {
-					this.fontToAskUpper.draw(super.batch, "NO", 1620, 160);
+					this.fontToAskUpper.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/6.75f);
 					if(this.askToDeleteGame5NoButtonPlayed == false) {
 						World.clickSound.play();
 						this.askToDeleteGame5NoButtonPlayed = true;
 					}
 				}else {
 					this.askToDeleteGame5NoButtonPlayed = false;
-					this.fontToAsk.draw(super.batch, "NO", 1620, 160);
+					this.fontToAsk.draw(super.batch, "NO", Gdx.graphics.getWidth()/1.1852f, Gdx.graphics.getHeight()/6.75f);
 				}
 				if(this.askToDeleteGame5NoButton.isPressed()) {
 					this.deleteGame5ButtonPressed = false;
 				}
 			}else {
 				if(this.deleteGame5Button.isOver()) {
-					this.fontUpperTitle.draw(super.batch, "DELETE GAME", 1390, 220);
+					this.fontUpperTitle.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3813f, Gdx.graphics.getHeight()/4.9091f);
 					if(this.deleteGame5ButtonPlayed == false) {
 						World.clickSound.play();
 						this.deleteGame5ButtonPlayed = true;
 					}
 				}else {
-					this.fontForNumbers.draw(super.batch, "DELETE GAME", 1400, 220);
+					this.fontForNumbers.draw(super.batch, "DELETE GAME", Gdx.graphics.getWidth()/1.3714f, Gdx.graphics.getHeight()/4.9091f);
 					this.deleteGame5ButtonPlayed = false;
 				}
 			}
 		}else {
-			this.fontForNumbers.draw(super.batch, "NEW GAME", 480, 220);
+			this.fontForNumbers.draw(super.batch, "NEW GAME", Gdx.graphics.getWidth()/4f, Gdx.graphics.getHeight()/4.9091f);
 		}
 
 		super.batch.draw(World.darkButton, this.backToMainMenuButton.getX(), this.backToMainMenuButton.getY(), this.backToMainMenuButton.getWidth(), this.backToMainMenuButton.getHeight());
@@ -531,7 +531,7 @@ public class StartGameScreen extends AbstractScreen{
 		}else {
 			this.backToMainMenuButtonPlayed = false;
 		}
-		super.font.draw(super.batch, "BACK", 950, 60);
+		super.font.draw(super.batch, "BACK", Gdx.graphics.getWidth()/2.0211f, Gdx.graphics.getHeight()/18f);
 		super.batch.end();
 
 		this.backToMainMenuButton.addListener(UIFactory.createListener(World.MainMenuScreen));
