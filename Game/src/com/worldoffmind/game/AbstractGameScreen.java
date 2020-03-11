@@ -18,8 +18,10 @@ import Attacks.FireAttack;
 import Attacks.FireAttack.State;
 import allCharacters.Characters;
 import allCharacters.PrincipalPlayer;
+import com.badlogic.gdx.graphics.FPSLogger;
 
 public abstract class AbstractGameScreen implements Screen{
+	public com.badlogic.gdx.physics.box2d.World world;
 	public SpriteBatch batch;
 	public BitmapFont font;
 	public OrthographicCamera camera;
@@ -45,9 +47,9 @@ public abstract class AbstractGameScreen implements Screen{
 		this.camera.position.set(this.camera.viewportWidth/2f, this.camera.viewportHeight/2f, 0);
 		this.camera.update();
 		
-		this.viewport = new ExtendViewport(1920, 1080, this.camera);
+		this.viewport = new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), this.camera);
 		
-		this.principalPlayer = new PrincipalPlayer(10, 10);
+		this.principalPlayer = new PrincipalPlayer(10, 10, this.world);
 		this.attacks = new Array<Attack>();
 		this.enemies = new Array<Characters>();
 		
@@ -69,7 +71,7 @@ public abstract class AbstractGameScreen implements Screen{
 	
 	public void handleInput(float dt) {
 		if(Gdx.input.isKeyPressed(Keys.ESCAPE)) { 
-			this.screenState = this.screenState.PAUSED;
+			Gdx.app.exit();
 		}
 
 		if(Gdx.input.isKeyPressed(Keys.LEFT)) {
@@ -137,9 +139,10 @@ public abstract class AbstractGameScreen implements Screen{
 					this.createAttack("down");
 				}
 			}
-		}else if(this.attacking == true) {
-			this.attacking = false;
-		}else {
+		}/*else if() {
+			
+		}*/
+		else {
 			this.attacking = false;
 			if(this.state.contentEquals("left")) {
 				this.principalPlayer.state = PrincipalPlayer.State.IDLELeft;
@@ -194,9 +197,10 @@ public abstract class AbstractGameScreen implements Screen{
 				iter2.remove();
 			}
 		}
+		for(Attack spell: this.attacks) spell.update(dt);
 		this.principalPlayer.update(dt);
 		
-		for(Attack spell: this.attacks) spell.update(dt);
+		
 	}
 
 	@Override
