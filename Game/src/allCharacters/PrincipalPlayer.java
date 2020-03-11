@@ -7,6 +7,13 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
+
+import Attacks.Attack;
 
 public class PrincipalPlayer extends Characters{
 
@@ -18,8 +25,18 @@ public class PrincipalPlayer extends Characters{
 	Animation<TextureRegion> animationAttackUp, animationAttackDown, animationAttackRight, animationAttackLeft;
 	TextureRegion [] textureRegionRight, textureRegionLeft, textureRegionDown, textureRegionUp, textureRegionAttackUp, textureRegionAttackDown, textureRegionAttackRight, textureRegionAttackLeft;
 	TextureRegion textureRegionIdleRight, textureRegionIdleLeft, textureRegionIdleUp, textureRegionIdleDown;
+	public Array<Attack> attacks;
+	World world;
+	Body miniBodyPlayer;
+	Fixture miniPlayerFixture;
+	BodyDef miniPlayerBodyDef;
 
-	public PrincipalPlayer(float x, float y) {
+	public PrincipalPlayer(float x, float y, World world) {
+		super.position = new Vector2(x,y);
+		this.miniPlayerBodyDef=createBody();
+
+		this.world=world;
+		this.miniBodyPlayer=world.createBody(miniPlayerBodyDef);
 		
 		this.textureRegionIdleRight = new Sprite(new Texture(Gdx.files.internal("PrincipalPlayer/IdlePosition/IdleRight.png")));
 		this.textureRegionIdleLeft = new Sprite(new Texture(Gdx.files.internal("PrincipalPlayer/IdlePosition/IdleLeft.png")));
@@ -110,7 +127,6 @@ public class PrincipalPlayer extends Characters{
 				new Sprite(new Texture(Gdx.files.internal("PrincipalPlayer/AttackLeft/AttackLeft7.png")))
 		};
 		
-		super.position = new Vector2(x,y);
 		
 		super.animationRight = new Animation<TextureRegion>(0.15f, this.textureRegionRight);
 		super.animationDown = new Animation<TextureRegion>(0.15f, this.textureRegionDown);
@@ -128,16 +144,24 @@ public class PrincipalPlayer extends Characters{
 		this.state = this.state.IDLERight;
 		
 		super.rect = new Rectangle(x, y, 45, 45);
+		
 	}
 	
+	private BodyDef createBody() {
+		BodyDef def =new BodyDef();
+		def.position.set(this.position);
+		def.type=BodyDef.BodyType.DynamicBody;
+		return def;
+	}
+
 	public void update(float dt) {
 		//System.out.println("x:"+ position.x+" y: "+position.y);
 		super.stateTime += dt;
 		
 		if(super.position.x <= 0) super.position.x = 0;
-		if(super.position.y <= 0) super.position.y = 0;
+	//	if(super.position.y <= 0) super.position.y = 0;
 		if(super.position.x >= Gdx.graphics.getWidth() - 51) super.position.x = Gdx.graphics.getWidth() - 51;
-		if(super.position.y >= Gdx.graphics.getHeight() - 58) super.position.y = Gdx.graphics.getHeight() - 58;
+	//	if(super.position.y >= Gdx.graphics.getHeight() - 58) super.position.y = Gdx.graphics.getHeight() - 58;
 		
 		super.rect.setPosition(super.position);
 		
